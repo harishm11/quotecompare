@@ -44,4 +44,5 @@ func main() {
 	setupRoutes(app)
 
 	app.Listen(3000)
+
 }

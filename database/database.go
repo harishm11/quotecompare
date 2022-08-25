@@ -14,5 +14,5 @@ var (
 // 	"gorm.io/gorm"
 //   )
 
-//   dsn := "host=localhost user=postgres password=readonly dbname=gorm port=9920 sslmode=disable TimeZone=Asia/Shanghai"
-//   db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+// dsn := "host=localhost user=postgres password=readonly dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai"
+// db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
