@@ -44,49 +44,8 @@ type Quote struct {
 	} `json:"incidents"`
 }
 
-// type Quote struct {
-// 	gorm.Model
-// 	QuoteNumber int       `json:"quoteNumber"`
-// 	Lob         string    `json:"lob"`
-// 	Drivers     Drivers   `json:"drivers"`
-// 	Vehicles    Vehicles  `json:"vehicles"`
-// 	Incidents   Incidents `json:"incidents"`
-// }
-// type Driver struct {
-// 	gorm.Model
-// 	DrvName             string `json:"drvName"`
-// 	DrvDrivingEperience int    `json:"drvDrivingEperience"`
-// 	DrvAgeInYrs         int    `json:"drvAgeInYrs"`
-// 	DrvDrivingCourse    bool   `json:"drvDrivingCourse"`
-// }
-
-// type Drivers struct {
-// 	Driver []Driver `json:"driver"`
-// }
-// type Vehicle struct {
-// 	gorm.Model
-// 	VehYear          int    `json:"vehYear"`
-// 	VehMake          string `json:"vehMake"`
-// 	VehModel         string `json:"vehModel"`
-// 	VehAnnualMileage int    `json:"vehAnnualMileage"`
-// 	VehGrgZipcode    string `json:"vehGrgZipcode"`
-// }
-
-// type Vehicles struct {
-// 	Vehicle []Vehicle `json:"vehicle"`
-// }
-// type Incident struct {
-// 	gorm.Model
-// 	IncDate   string `json:"incDate"`
-// 	IncType   string `json:"incType"`
-// 	Incdriver string `json:"incdriver"`
-// }
-
-// type Incidents struct {
-// 	Incident []Incident `json:"incident"`
-// }
-
 func GetQuotes(c *fiber.Ctx) {
+
 	db := database.DBConn
 	var quotes []Quote
 	db.Find(&quotes)
@@ -112,9 +71,7 @@ func NewQuote(c *fiber.Ctx) {
 	}
 	fmt.Println(quote.QuoteNumber)
 	fmt.Println(quote.Vehicles.Vehicle[1].VehYear)
-	VehicleData := make(map[veh]vehicle{})
-
-	// PAratingVariables.drvvar()
+	// VehicleData := make(map[veh]vehicle{})
 
 	//DTO for rating variables - parent process - P2 - create generic and company specific rating variables
 	//Concurrent 100 company quotes - child processes - PD

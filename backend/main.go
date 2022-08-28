@@ -4,9 +4,9 @@ import (
 	"fmt"
 
 	"github.com/gofiber/fiber"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/harishm11/quoteCompare/database"
 	quote "github.com/harishm11/quoteCompare/quote"
-
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
@@ -39,7 +39,14 @@ func main() {
 	app := fiber.New()
 	initDatabase()
 	defer database.DBConn.Close()
+
+	app.Use(cors.New(cors.Config{
+		AllowHeaders:     "Origin,Content-Type,Accept,Content-Length,Accept-Language,Accept-Encoding,Connection,Access-Control-Allow-Origin",
+		AllowOrigins:     "*",
+		AllowCredentials: true,
+		AllowMethods:     "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
+	}))
 	setupRoutes(app)
-	app.Listen(3000)
+	app.Listen(8000)
 
 }
