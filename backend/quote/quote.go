@@ -1,6 +1,8 @@
 package quote
 
 import (
+	"fmt"
+
 	"github.com/gofiber/fiber"
 	"github.com/harishm11/quoteCompare/database"
 	"github.com/jinzhu/gorm"
@@ -103,15 +105,20 @@ func NewQuote(c *fiber.Ctx) {
 	db := database.DBConn
 
 	quote := new(Quote)
+
 	if err := c.BodyParser(quote); err != nil {
 		c.Status(503).Send(err)
 		return
 	}
+	fmt.Println(quote.QuoteNumber)
+	fmt.Println(quote.Vehicles.Vehicle[1].VehYear)
+	VehicleData := make(map[veh]vehicle{})
+
+	// PAratingVariables.drvvar()
 
 	//DTO for rating variables - parent process - P2 - create generic and company specific rating variables
 	//Concurrent 100 company quotes - child processes - PD
 	//each child process for compaany gets calc rule for each coverage from redis cache , get the factors , calc the premium, send premium response - P3
-	
 
 	db.Create(&quote)
 	c.JSON(quote)

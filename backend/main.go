@@ -30,7 +30,6 @@ func initDatabase() {
 		panic("Failed to connect to database")
 	}
 	fmt.Println("Database connection successfully opened")
-
 	database.DBConn.AutoMigrate(&quote.Quote{})
 	fmt.Println("Database Migrated")
 
@@ -40,9 +39,7 @@ func main() {
 	app := fiber.New()
 	initDatabase()
 	defer database.DBConn.Close()
-
 	setupRoutes(app)
-
 	app.Listen(3000)
 
 }
