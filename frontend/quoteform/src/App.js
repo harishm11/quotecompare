@@ -25,7 +25,7 @@ function App() {
   }
 
   const handleVehcileFormChange = (event, index) => {
-    let data = [...quoteformFields];
+    let data = [...vehicleformFields];
     data[index][event.target.name] = event.target.value;
     setvehicleformFields(data);
   }
@@ -36,8 +36,9 @@ function App() {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ quoteformFields, driverformFields,vehicleformFields })
+        body: JSON.stringify({quoteformFields,driverformFields,vehicleformFields})
     };
+    console.log(requestOptions.body)
     fetch(url, requestOptions)
         .then(response => console.log(response.json()))
         .catch(error => console.log('Form submit error', error))
@@ -71,7 +72,7 @@ function App() {
   }
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}> */}
         {quoteformFields.map((form, index) => {
           return (
             <div key={index}>
@@ -190,8 +191,7 @@ function App() {
             </div>
           )
         })}
-      </form>
-      
+      {/* </form> */}
       <br />
       <button onClick={handleSubmit}>Submit</button>
     </div>
