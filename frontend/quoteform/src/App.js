@@ -2,26 +2,31 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [quoteformFields, setquoteformFields] = useState([
-    { quoteNumber :Math.floor(Math.random() * 999999999), lob: '' },
-  ])
+  const [quoteformFields, setquoteformFields] = useState(
+    [{ quotenumber :Math.floor(Math.random() * 999999999), lob: '' }]
+  )
+
+  const quotenumber = quoteformFields[0].quotenumber
+  const lob = quoteformFields[0].lob
+  
   const [driverformFields, setdriverformFields] = useState([
     { name: '', age: '' ,experience: '', course: '',incidentdate:'', incidenttype:''},
   ])
   const [vehicleformFields, setvehicleformFields] = useState([
-    { year: '', make: '' ,model: '', annualMileage: '',grgZip:''},
+    { vehyear: '', vehmake: '' ,vehmodel: '', annualMileage: '',grgZip:''},
   ])
+
+  
+  const handleQuoteFormChange = (event, index) => {
+    let data = [...quoteformFields];
+    data[index][event.target.name] = event.target.value;
+    setquoteformFields(data);
+  }
 
   const handleDriverFormChange = (event, index) => {
     let data = [...driverformFields];
     data[index][event.target.name] = event.target.value;
     setdriverformFields(data);
-  }
-
-  const handleQuoteFormChange = (event, index) => {
-    let data = [...quoteformFields];
-    data[index][event.target.name] = event.target.value;
-    setquoteformFields(data);
   }
 
   const handleVehcileFormChange = (event, index) => {
@@ -31,12 +36,13 @@ function App() {
   }
   const handleSubmit = event => {
     event.preventDefault();
-
+    
     const url = 'http://localhost:8000/quoteApi/quote'
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({quoteformFields,driverformFields,vehicleformFields})
+        
+        body: JSON.stringify({quotenumber,lob,driverformFields,vehicleformFields})
     };
     console.log(requestOptions.body)
     fetch(url, requestOptions)
@@ -57,10 +63,9 @@ function App() {
     setdriverformFields(data)
   }
 
-
   const addVehicleFields = () => {
     let object = {
-       year: '', make: '' ,model: '', annualMileage: '',grgZip:''
+       vehyear: '', vehmake: '' ,vehmodel: '', annualMileage: '',grgZip:''
     }
     setvehicleformFields([...vehicleformFields, object])
   }
@@ -72,20 +77,18 @@ function App() {
   }
   return (
     <div className="App">
-      {/* <form onSubmit={handleSubmit}> */}
-        {quoteformFields.map((form, index) => {
+      {quoteformFields.map((form,index) => {
           return (
             <div key={index}>
               <div>
                 <h1>Quote</h1>
               </div>
               <input
-                name='quoteNumber'
+                name='quotenumber'
                 placeholder='Quote Number'
                 onChange={event => handleQuoteFormChange(event, index)}
-                value={form.quoteNumber}
-              />
-               
+                value={form.quotenumber}
+              />   
               <label>
               Line of business:
                 <select value={form.lob} onChange={event => handleQuoteFormChange(event, index)}>
@@ -157,19 +160,19 @@ function App() {
             <div key={index}>
               
               <input
-                name='year'
+                name='vehyear'
                 placeholder='Year'
                 onChange={event => handleVehcileFormChange(event, index)}
                 value={form.year}
               />
               <input
-                name='make'
+                name='vehmake'
                 placeholder='Make'
                 onChange={event => handleVehcileFormChange(event, index)}
                 value={form.make}
               />
               <input
-                name='model'
+                name='vehmodel'
                 placeholder='Model'
                 onChange={event => handleVehcileFormChange(event, index)}
                 value={form.model}
