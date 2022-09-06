@@ -1,11 +1,11 @@
 package models
 
 type Quote struct {
-	ID          uint      `gorm:"primaryKey;uniqueIndex;"`
-	QuoteNumber int       `json:"quotenumber"`
-	Lob         string    `json:"lob"`
-	Drivers     []Driver  `json:"driverformFields" gorm:"foreignKey:QuoteID" `
-	Vehicles    []Vehicle `json:"vehicleformFields" gorm:"foreignKey:QuoteID" `
+	ID          uint `gorm:"primaryKey;uniqueIndex;"`
+	QuoteNumber int  `json:"quotenumber"`
+	// Lob         string    `json:"lob"`
+	Drivers  []Driver  `json:"driverformFields" gorm:"foreignKey:QuoteID" `
+	Vehicles []Vehicle `json:"vehicleformFields" gorm:"foreignKey:QuoteID" `
 }
 
 type Driver struct {

@@ -3,11 +3,11 @@ import './App.css';
 
 function App() {
   const [quoteformFields, setquoteformFields] = useState(
-    [{ quotenumber :Math.floor(Math.random() * 999999999), lob: '' }]
+    [{ quotenumber :Math.floor(Math.random() * 999999999) }]
   )
 
   const quotenumber = quoteformFields[0].quotenumber
-  const lob = quoteformFields[0].lob
+  
   
   const [driverformFields, setdriverformFields] = useState([
     { name: '', age: '' ,experience: '', course: '',incidentdate:'', incidenttype:''},
@@ -42,9 +42,9 @@ function App() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         
-        body: JSON.stringify({quotenumber,lob,driverformFields,vehicleformFields})
+        body: JSON.stringify({quotenumber,driverformFields,vehicleformFields})
     };
-    console.log(requestOptions.body)
+    // console.log(requestOptions.body)
     fetch(url, requestOptions)
         .then(response => console.log(response.json()))
         .catch(error => console.log('Form submit error', error))
@@ -89,14 +89,14 @@ function App() {
                 onChange={event => handleQuoteFormChange(event, index)}
                 value={form.quotenumber}
               />   
-              <label>
+              {/* <label>
               Line of business:
                 <select value={form.lob} onChange={event => handleQuoteFormChange(event, index)}>
                   <option value="Auto">Auto</option>
                   <option value="Home">Home</option>
                   <option value="Umbrella">Umbrella</option>
                 </select>
-              </label>
+              </label> */}
             </div>
           )
         })}
