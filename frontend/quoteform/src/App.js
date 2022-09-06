@@ -44,7 +44,7 @@ function App() {
         
         body: JSON.stringify({quotenumber,driverformFields,vehicleformFields})
     };
-    console.log(requestOptions.body)
+    // console.log(requestOptions.body)
     fetch(url, requestOptions)
         .then(response => console.log(response.json()))
         .catch(error => console.log('Form submit error', error))
