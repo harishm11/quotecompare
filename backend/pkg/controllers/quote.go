@@ -1,6 +1,8 @@
 package quote
 
 import (
+	"time"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/harishm11/quoteCompare/database"
 	"github.com/harishm11/quoteCompare/pkg/models"
@@ -40,6 +42,11 @@ func NewQuote(c *fiber.Ctx) error {
 	//DTO for rating variables - parent process - P2 - create generic and company specific rating variables
 	//Concurrent 100 company quotes - child processes - PD
 	//each child process for compaany gets calc rule for each coverage from redis cache , get the factors , calc the premium, send premium response - P3
+	quote.RateTermStartDate = quote.QuoteEffDate
+	quote.RateAppliedDate = time.Now()
+	quote.QuoteStartDate = time.Now()
+
+	
 
 	db.Create(&quote)
 	return c.JSON(quote)
