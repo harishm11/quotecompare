@@ -2,7 +2,7 @@ package urls
 
 import (
 	"github.com/gofiber/fiber/v2"
-	quote "github.com/harishm11/quoteCompare/pkg/controllers"
+	quote "github.com/harishm11/quoteCompare/pkg/quote"
 )
 
 func Home(c *fiber.Ctx) error {

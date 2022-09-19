@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/harishm11/quoteCompare/pkg/models"
+	"github.com/harishm11/quoteCompare/pkg/tables"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -24,6 +25,7 @@ func InitDatabase() {
 	DBConn.AutoMigrate(&models.Quote{})
 	DBConn.AutoMigrate(&models.Driver{})
 	DBConn.AutoMigrate(&models.Vehicle{})
+	DBConn.AutoMigrate(&tables.Ratebook{})
 	if err != nil {
 		panic("Automigrate to database Failed")
 	}
