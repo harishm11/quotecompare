@@ -3,7 +3,7 @@ package rtgengine
 import (
 	"fmt"
 
-	"github.com/harishm11/quoteCompare/pkg/models"
+	"github.com/harishm11/quoteCompare/tables/models"
 )
 
 func RatingEngineImpl(q *models.Quote) {

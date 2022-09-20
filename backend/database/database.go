@@ -3,8 +3,9 @@ package database
 import (
 	"fmt"
 
-	"github.com/harishm11/quoteCompare/pkg/models"
-	"github.com/harishm11/quoteCompare/pkg/tables"
+	"github.com/harishm11/quoteCompare/tables/models"
+	"github.com/harishm11/quoteCompare/tables/ratingtables"
+	"github.com/harishm11/quoteCompare/tables/systemtables"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -23,13 +24,20 @@ func InitDatabase() {
 	}
 	fmt.Println("Database connection successfully opened")
 
+	//Policy Tables
 	DBConn.AutoMigrate(&models.Quote{})
 	DBConn.AutoMigrate(&models.Driver{})
 	DBConn.AutoMigrate(&models.Vehicle{})
-	DBConn.AutoMigrate(&tables.Ratebooks{})
-	DBConn.AutoMigrate(&tables.Routines{})
-	DBConn.AutoMigrate(&tables.RateFactors{})
-	DBConn.AutoMigrate(&tables.RateRoutinSteps{})
+
+	//Rating tables
+	DBConn.AutoMigrate(&ratingtables.Ratebooks{})
+	DBConn.AutoMigrate(&ratingtables.Routines{})
+	DBConn.AutoMigrate(&ratingtables.RateFactors{})
+	DBConn.AutoMigrate(&ratingtables.RateRoutinSteps{})
+
+	//System tables
+	DBConn.AutoMigrate(&systemtables.States{})
+	DBConn.AutoMigrate(&systemtables.CompanyNAIC{})
 
 	if err != nil {
 		panic("Automigrate to database Failed")

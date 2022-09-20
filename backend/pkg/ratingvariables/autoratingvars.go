@@ -1,7 +1,7 @@
 package ratingvariables
 
 import (
-	"github.com/harishm11/quoteCompare/pkg/models"
+	"github.com/harishm11/quoteCompare/tables/models"
 )
 
 func PolicyRatingVars(q *models.Quote) {

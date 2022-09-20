@@ -5,7 +5,7 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/harishm11/quoteCompare/database"
-	"github.com/harishm11/quoteCompare/pkg/models"
+	"github.com/harishm11/quoteCompare/tables/models"
 	"github.com/harishm11/quoteCompare/pkg/rtgengine"
 )
 
