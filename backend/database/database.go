@@ -22,10 +22,15 @@ func InitDatabase() {
 		panic("Failed to connect to database")
 	}
 	fmt.Println("Database connection successfully opened")
+
 	DBConn.AutoMigrate(&models.Quote{})
 	DBConn.AutoMigrate(&models.Driver{})
 	DBConn.AutoMigrate(&models.Vehicle{})
-	DBConn.AutoMigrate(&tables.Ratebook{})
+	DBConn.AutoMigrate(&tables.Ratebooks{})
+	DBConn.AutoMigrate(&tables.Routines{})
+	DBConn.AutoMigrate(&tables.RateFactors{})
+	DBConn.AutoMigrate(&tables.RateRoutinSteps{})
+
 	if err != nil {
 		panic("Automigrate to database Failed")
 	}
