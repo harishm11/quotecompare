@@ -1,12 +1,14 @@
 package quote
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/harishm11/quoteCompare/database"
-	"github.com/harishm11/quoteCompare/tables/models"
+	"github.com/harishm11/quoteCompare/pkg/ratingvariables"
 	"github.com/harishm11/quoteCompare/pkg/rtgengine"
+	"github.com/harishm11/quoteCompare/tables/models"
 )
 
 func GetQuotes(c *fiber.Ctx) error {
@@ -42,7 +44,14 @@ func NewQuote(c *fiber.Ctx) error {
 	quote.RateAppliedDate = time.Now()
 	quote.QuoteStartDate = time.Now()
 
+	plcyratvars := ratingvariables.PopPolicyRatingVars(quote)
+	vehratvars := ratingvariables.PopVehicleRatingVars(quote.Vehicles)
+	drvratvars := ratingvariables.PopDriverRatingVars(quote.Drivers)
+
 	rtgengine.RatingEngineImpl(quote)
+	fmt.Println(plcyratvars)
+	fmt.Println(vehratvars)
+	fmt.Println(drvratvars)
 
 	db.Create(&quote)
 	return c.JSON(quote)

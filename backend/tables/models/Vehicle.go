@@ -8,4 +8,5 @@ type Vehicle struct {
 	VehModel      string `json:"vehmodel"`
 	AnnualMileage string `json:"annualMileage"`
 	GrgZip        string `json:"grgZip"`
+	VehicleUsage  string `json:"vehicleusage"`
 }
