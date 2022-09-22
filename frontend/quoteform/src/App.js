@@ -1,19 +1,25 @@
 import { useState } from 'react';
+import React from 'react';
+// import DatePicker from "react-datepicker";
 import './App.css';
 
 function App() {
   const [quoteformFields, setquoteformFields] = useState(
-    [{ quotenumber :Math.floor(Math.random() * 999999999) }]
+    [{ quotenumber :Math.floor(Math.random() * 999999999) ,effDate:'',policyterm:6}]
   )
 
-  const quotenumber = quoteformFields[0].quotenumber
   
+  var quotenumber = quoteformFields[0].quotenumber
+  const effDate = new Date(quoteformFields[0].effDate)
+  const policyterm = 6
+
   
+
   const [driverformFields, setdriverformFields] = useState([
-    { name: '', age: '' ,experience: '', course: '',incidentdate:'', incidenttype:''},
+    { name: '', age: 0 ,experience:0, course: '',incidentdate:'', incidenttype:'',maritalstatcode:''},
   ])
   const [vehicleformFields, setvehicleformFields] = useState([
-    { vehyear: '', vehmake: '' ,vehmodel: '', annualMileage: '',grgZip:''},
+    { vehyear:1987, vehmake: '' ,vehmodel: '', annualMileage: 10000,grgZip:'',vehicleusage:''},
   ])
 
   
@@ -42,17 +48,20 @@ function App() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         
-        body: JSON.stringify({quotenumber,driverformFields,vehicleformFields})
+        body: JSON.stringify({quotenumber,effDate,policyterm, driverformFields,vehicleformFields})
     };
     // console.log(requestOptions.body)
+    // var newData =[...quoteformFields]
     fetch(url, requestOptions)
-        .then(response => console.log(response.json()))
+        // .then(response => console.log(response.json()))
+        .then(alert(`Quote created successfully`))
+        .then(window.location.reload(true))
         .catch(error => console.log('Form submit error', error))
   };
 
   const addDriverFields = () => {
     let object = {
-      name: '', age: '' ,experience: '', course: '',incidentdate:'', incidenttype:''
+      name: '', age: 0 ,experience:0, course: '',incidentdate:'', incidenttype:'',maritalstatcode:''
     }
     setdriverformFields([...driverformFields, object])
   }
@@ -65,7 +74,7 @@ function App() {
 
   const addVehicleFields = () => {
     let object = {
-       vehyear: '', vehmake: '' ,vehmodel: '', annualMileage: '',grgZip:''
+       vehyear:1987, vehmake: '' ,vehmodel: '', annualMileage: 10000,grgZip:'',vehicleusage:''
     }
     setvehicleformFields([...vehicleformFields, object])
   }
@@ -89,6 +98,20 @@ function App() {
                 onChange={event => handleQuoteFormChange(event, index)}
                 value={form.quotenumber}
               />   
+              <input
+                name='effDate'
+                placeholder='Effective Date'
+                onChange={event => handleQuoteFormChange(event, index)}
+                value={form.effDate}
+              />
+              <input
+                type='number'
+                min ='6'
+                name='policyterm'
+                placeholder='Policy term'
+                onChange={event => handleQuoteFormChange(event, index)}
+                value={form.policyterm}
+              />
               {/* <label>
               Line of business:
                 <select value={form.lob} onChange={event => handleQuoteFormChange(event, index)}>
@@ -115,12 +138,15 @@ function App() {
                 value={form.name}
               />
               <input
+                type='number'
+                min = '15'
                 name='age'
                 placeholder='Age'
                 onChange={event => handleDriverFormChange(event, index)}
                 value={form.age}
               />
               <input
+                type='number'
                 name='experience'
                 placeholder='Experience'
                 onChange={event => handleDriverFormChange(event, index)}
@@ -144,6 +170,12 @@ function App() {
                 onChange={event => handleDriverFormChange(event, index)}
                 value={form.incidenttype}
               />
+              <input
+                name='maritalstatcode'
+                placeholder='Marital status code'
+                onChange={event => handleDriverFormChange(event, index)}
+                value={form.maritalstatcode}
+              />
               <button onClick={addDriverFields}>Add</button>
               <button onClick={() => removeDriverFields(index)}>Remove</button>
             </div>
@@ -160,6 +192,8 @@ function App() {
             <div key={index}>
               
               <input
+                type='number'
+                min = '1901'
                 name='vehyear'
                 placeholder='Year'
                 onChange={event => handleVehcileFormChange(event, index)}
@@ -178,6 +212,8 @@ function App() {
                 value={form.model}
               />
               <input
+                type='number'
+                min='3000'
                 name='annualMileage'
                 placeholder='Annual Mileage'
                 onChange={event => handleVehcileFormChange(event, index)}
@@ -188,6 +224,12 @@ function App() {
                 placeholder='Garaging Zip Code'
                 onChange={event => handleVehcileFormChange(event, index)}
                 value={form.grgZip}
+              />
+              <input
+                name='vehicleusage'
+                placeholder='Vehicle Usage'
+                onChange={event => handleVehcileFormChange(event, index)}
+                value={form.vehicleusage}
               />
               <button onClick={addVehicleFields}>Add</button>
               <button onClick={() => removeVehicleFields(index)}>Remove</button>
