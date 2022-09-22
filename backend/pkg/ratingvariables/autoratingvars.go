@@ -15,6 +15,11 @@ type PolicyRatingVars struct {
 	AutoRenterLifeDisc bool
 	AutoCeaDisc        bool
 	Policyterm         uint
+	TotalVehicles      int
+	TotalDrivers       int
+	MultiCarDisc       bool
+	MatureDrvDisc      bool
+	PersistencyDisc    bool
 }
 
 type DriverRatingVars struct {
@@ -24,7 +29,6 @@ type DriverRatingVars struct {
 	SeniorDefDisc   bool
 	DriverTrainDisc bool
 	GoodDriverDisc  bool
-	TotalDrivers    uint16
 	DPSScore        uint16
 }
 
@@ -33,23 +37,32 @@ type VehicleRatingVars struct {
 	AltFuelInd        bool
 	AntiLockBrakeDisc bool
 	AntiTheftDisc     bool
-	TotalVehicles     uint16
 	PassiveRestDisc   bool
 	ESCDisc           bool
 	VehicleUsage      string
 	VehicleAge        int
+	Zipcode           int
+	Modelyear         int
+	Symbol            int
+	RatedDriver       models.Driver
 }
 
 func PopPolicyRatingVars(q *models.Quote) PolicyRatingVars {
 
 	var policyRatingVars PolicyRatingVars
-
+	policyRatingVars.TotalVehicles = len(q.Vehicles)
+	policyRatingVars.TotalDrivers = len(q.Drivers)
+	if policyRatingVars.TotalVehicles > 1 {
+		policyRatingVars.MultiCarDisc = true
+	}
+	policyRatingVars.MatureDrvDisc = false
 	policyRatingVars.AutoHomeDisc = false
 	policyRatingVars.AutoHomeLifeDisc = false
 	policyRatingVars.AutoLifeDisc = false
 	policyRatingVars.AutoRenterDisc = false
 	policyRatingVars.AutoRenterLifeDisc = false
 	policyRatingVars.AutoCeaDisc = false
+	policyRatingVars.PersistencyDisc = false
 	policyRatingVars.Policyterm = q.Policyterm
 
 	return policyRatingVars
@@ -60,7 +73,7 @@ func PopDriverRatingVars(d []models.Driver) []DriverRatingVars {
 
 	for index, drv := range d {
 		driverRatingVars[index].GoodStdDisc = false
-		driverRatingVars[index].GoodDriverDisc = false
+		driverRatingVars[index].GoodDriverDisc = true
 		driverRatingVars[index].DriverTrainDisc = false
 		driverRatingVars[index].SeniorDefDisc = false
 		driverRatingVars[index].MaritalStatCode = drv.MaritalStatCode
@@ -82,11 +95,13 @@ func PopVehicleRatingVars(v []models.Vehicle) []VehicleRatingVars {
 		vehicleRatingVars[index].ESCDisc = false
 		var err error
 		var value int64
-		value ,err = veh.VehYear.Int64()
+		value, err = veh.VehYear.Int64()
 		if err != nil {
 			vehicleRatingVars[index].VehicleAge = time.Now().Year() - int(value)
 		}
+		vehicleRatingVars[index].Modelyear = int(value)
 		vehicleRatingVars[index].VehicleUsage = veh.VehicleUsage
+		vehicleRatingVars[index].Symbol = 1
 
 	}
 	return vehicleRatingVars
