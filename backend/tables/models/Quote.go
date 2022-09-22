@@ -12,5 +12,5 @@ type Quote struct {
 	RateTermStartDate time.Time
 	RateAppliedDate   time.Time
 	QuoteStartDate    time.Time
-	Policyterm        int
+	Policyterm        uint
 }

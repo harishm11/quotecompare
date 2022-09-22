@@ -1,6 +1,9 @@
 package ratingvariables
 
 import (
+	"encoding/json"
+	"time"
+
 	"github.com/harishm11/quoteCompare/tables/models"
 )
 
@@ -11,11 +14,11 @@ type PolicyRatingVars struct {
 	AutoRenterDisc     bool
 	AutoRenterLifeDisc bool
 	AutoCeaDisc        bool
-	Policyterm         int
+	Policyterm         uint
 }
 
 type DriverRatingVars struct {
-	DrivingExpYears string
+	DrivingExpYears json.Number
 	MaritalStatCode string
 	GoodStdDisc     bool
 	SeniorDefDisc   bool
@@ -26,7 +29,7 @@ type DriverRatingVars struct {
 }
 
 type VehicleRatingVars struct {
-	AnnualMileage     string
+	AnnualMileage     json.Number
 	AltFuelInd        bool
 	AntiLockBrakeDisc bool
 	AntiTheftDisc     bool
@@ -70,7 +73,6 @@ func PopDriverRatingVars(d []models.Driver) []DriverRatingVars {
 
 func PopVehicleRatingVars(v []models.Vehicle) []VehicleRatingVars {
 	var vehicleRatingVars = make([]VehicleRatingVars, len(v))
-
 	for index, veh := range v {
 		vehicleRatingVars[index].AnnualMileage = veh.AnnualMileage
 		vehicleRatingVars[index].AntiLockBrakeDisc = false
@@ -78,8 +80,12 @@ func PopVehicleRatingVars(v []models.Vehicle) []VehicleRatingVars {
 		vehicleRatingVars[index].PassiveRestDisc = false
 		vehicleRatingVars[index].PassiveRestDisc = false
 		vehicleRatingVars[index].ESCDisc = false
-		vehicleRatingVars[index].VehicleAge = ' '
-		//time.Now().Year() - veh.VehYear
+		var err error
+		var value int64
+		value ,err = veh.VehYear.Int64()
+		if err != nil {
+			vehicleRatingVars[index].VehicleAge = time.Now().Year() - int(value)
+		}
 		vehicleRatingVars[index].VehicleUsage = veh.VehicleUsage
 
 	}

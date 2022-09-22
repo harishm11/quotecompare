@@ -5,21 +5,21 @@ import './App.css';
 
 function App() {
   const [quoteformFields, setquoteformFields] = useState(
-    [{ quotenumber :Math.floor(Math.random() * 999999999) ,effDate:'',policyterm:0}]
+    [{ quotenumber :Math.floor(Math.random() * 999999999) ,effDate:'',policyterm:6}]
   )
 
   
   var quotenumber = quoteformFields[0].quotenumber
   const effDate = new Date(quoteformFields[0].effDate)
-  const policyterm=0
+  const policyterm = 6
 
   
 
   const [driverformFields, setdriverformFields] = useState([
-    { name: '', age: '' ,experience:'', course: '',incidentdate:'', incidenttype:'',maritalstatcode:''},
+    { name: '', age: 0 ,experience:0, course: '',incidentdate:'', incidenttype:'',maritalstatcode:''},
   ])
   const [vehicleformFields, setvehicleformFields] = useState([
-    { vehyear:'', vehmake: '' ,vehmodel: '', annualMileage: '',grgZip:'',vehicleusage:''},
+    { vehyear:1987, vehmake: '' ,vehmodel: '', annualMileage: 10000,grgZip:'',vehicleusage:''},
   ])
 
   
@@ -61,7 +61,7 @@ function App() {
 
   const addDriverFields = () => {
     let object = {
-      name: '', age: '' ,experience:'', course: '',incidentdate:'', incidenttype:'',maritalstatcode:''
+      name: '', age: 0 ,experience:0, course: '',incidentdate:'', incidenttype:'',maritalstatcode:''
     }
     setdriverformFields([...driverformFields, object])
   }
@@ -74,7 +74,7 @@ function App() {
 
   const addVehicleFields = () => {
     let object = {
-       vehyear:'', vehmake: '' ,vehmodel: '', annualMileage: '',grgZip:'',vehicleusage:''
+       vehyear:1987, vehmake: '' ,vehmodel: '', annualMileage: 10000,grgZip:'',vehicleusage:''
     }
     setvehicleformFields([...vehicleformFields, object])
   }
@@ -105,6 +105,8 @@ function App() {
                 value={form.effDate}
               />
               <input
+                type='number'
+                min ='6'
                 name='policyterm'
                 placeholder='Policy term'
                 onChange={event => handleQuoteFormChange(event, index)}
@@ -136,12 +138,15 @@ function App() {
                 value={form.name}
               />
               <input
+                type='number'
+                min = '15'
                 name='age'
                 placeholder='Age'
                 onChange={event => handleDriverFormChange(event, index)}
                 value={form.age}
               />
               <input
+                type='number'
                 name='experience'
                 placeholder='Experience'
                 onChange={event => handleDriverFormChange(event, index)}
@@ -187,6 +192,8 @@ function App() {
             <div key={index}>
               
               <input
+                type='number'
+                min = '1901'
                 name='vehyear'
                 placeholder='Year'
                 onChange={event => handleVehcileFormChange(event, index)}
@@ -205,6 +212,8 @@ function App() {
                 value={form.model}
               />
               <input
+                type='number'
+                min='3000'
                 name='annualMileage'
                 placeholder='Annual Mileage'
                 onChange={event => handleVehcileFormChange(event, index)}
