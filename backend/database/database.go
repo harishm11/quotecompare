@@ -28,6 +28,7 @@ func InitDatabase() {
 	DBConn.AutoMigrate(&models.Quote{})
 	DBConn.AutoMigrate(&models.Driver{})
 	DBConn.AutoMigrate(&models.Vehicle{})
+	DBConn.AutoMigrate(&models.Coverage{})
 
 	//Rating tables
 	DBConn.AutoMigrate(&ratingtables.Ratebooks{})

@@ -11,4 +11,5 @@ type Vehicle struct {
 	AnnualMileage json.Number `json:"annualMileage"`
 	GrgZip        string      `json:"grgZip"`
 	VehicleUsage  string      `json:"vehicleusage"`
+	Coverages     []Coverage  `gorm:"foreignKey:VehicleID" `
 }

@@ -33,27 +33,70 @@ func GetQuote(c *fiber.Ctx) error {
 }
 
 func NewQuote(c *fiber.Ctx) error {
+	fmt.Println(time.Now())
 	db := database.DBConn
 	quote := new(models.Quote)
+
+	//parse the input json quote request
 	if err := c.BodyParser(quote); err != nil {
 		panic(err)
-
 	}
 
 	quote.RateTermStartDate = quote.QuoteEffDate
 	quote.RateAppliedDate = time.Now()
 	quote.QuoteStartDate = time.Now()
 
+	//Populate Coverages
+
+	var c1 = models.Coverage{}
+	var c2 = models.Coverage{}
+	var c3 = models.Coverage{}
+
+	c1 =
+		models.Coverage{
+			CoverageCode:       "BodilyInjury",
+			CvgSymbol:          "",
+			LimitPerPerson:     "100000",
+			LimitPerOccurrence: "300000",
+			Deductible:         "",
+			CvgPremium:         0.0,
+		}
+
+	c2 =
+		models.Coverage{
+			CoverageCode:       "PropertyDamage",
+			CvgSymbol:          "",
+			LimitPerPerson:     "100000",
+			LimitPerOccurrence: "",
+			Deductible:         "",
+			CvgPremium:         0.0,
+		}
+	c3 =
+		models.Coverage{
+			CoverageCode:       "Comprehensive",
+			CvgSymbol:          "",
+			LimitPerPerson:     "",
+			LimitPerOccurrence: "",
+			Deductible:         "500",
+			CvgPremium:         0.0,
+		}
+	for vehidx := range quote.Vehicles {
+		quote.Vehicles[vehidx].Coverages = append(quote.Vehicles[vehidx].Coverages, c1)
+		quote.Vehicles[vehidx].Coverages = append(quote.Vehicles[vehidx].Coverages, c2)
+		quote.Vehicles[vehidx].Coverages = append(quote.Vehicles[vehidx].Coverages, c3)
+		//fmt.Println(quote.Vehicles[vehidx].Coverages)
+	}
+
+	//derive rating variables from the quote data
 	plcyratvars := ratingvariables.PopPolicyRatingVars(quote)
 	vehratvars := ratingvariables.PopVehicleRatingVars(quote.Vehicles)
 	drvratvars := ratingvariables.PopDriverRatingVars(quote.Drivers)
 
-	rtgengine.RatingEngineImpl(quote)
-	fmt.Println(plcyratvars)
-	fmt.Println(vehratvars)
-	fmt.Println(drvratvars)
+	//call rating engine passing derived rating variables
+	rtgengine.RatingEngineImpl(plcyratvars, drvratvars, vehratvars)
 
 	db.Create(&quote)
+	fmt.Println(time.Now())
 	return c.JSON(quote)
 }
 

@@ -1,10 +1,10 @@
 package ratingtables
 
 type RateFactors struct {
-	StateCode      string `gorm:"primaryKey"`
-	ProductCode    string `gorm:"primaryKey"`
-	CoverageCode   string `gorm:"primaryKey"`
-	RatingItemCode string `gorm:"primaryKey"`
+	StateCode      string
+	ProductCode    string
+	CoverageCode   string
+	RatingItemCode string
 	RateVar1Code   string
 	RateVar1Value  string
 	RateVar2Code   string

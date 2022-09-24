@@ -3,16 +3,20 @@ package rtgengine
 import (
 	"fmt"
 
-	"github.com/harishm11/quoteCompare/tables/models"
+	"github.com/harishm11/quoteCompare/pkg/ratingvariables"
 )
 
-func RatingEngineImpl(q *models.Quote) {
+func RatingEngineImpl(pv ratingvariables.PolicyRatingVars, dv []ratingvariables.DriverRatingVars, vv []ratingvariables.VehicleRatingVars) {
 
-	//DTO for rating variables - parent process - P2 - create generic and company specific rating variables
-	//Concurrent 100 company quotes - child processes - PD
-	//each child process for compaany gets calc rule for each coverage from redis cache , get the factors , calc the premium, send premium response - P3
+	qeffdt := pv.QuoteEffDt
+	qapplieddt := pv.QuoteAppliedDt
 
-	var ratebookcode = RatebookSelector(q)
-	fmt.Println(" Quote eff date ", q.QuoteEffDate)
+	//select ratebook using quote effective date and quote applied date
+	var ratebookcode = RatebookSelector(qeffdt, qapplieddt)
+	fmt.Println("Quote eff date ", pv.QuoteEffDt)
 	fmt.Println("Ratebook code", ratebookcode)
+
+	//Process routinesteps
+	ProcessRoutinesteps(pv, dv, vv)
+
 }
