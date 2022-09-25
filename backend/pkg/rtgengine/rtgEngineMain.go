@@ -6,8 +6,8 @@ import (
 	"github.com/harishm11/quoteCompare/pkg/ratingvariables"
 )
 
-func RatingEngineImpl(pv ratingvariables.PolicyRatingVars, dv []ratingvariables.DriverRatingVars, vv []ratingvariables.VehicleRatingVars) {
-
+func RatingEngineImpl(pv ratingvariables.PolicyRatingVars, dv []ratingvariables.DriverRatingVars, vv []ratingvariables.VehicleRatingVars) float32 {
+	var plcyprm float32
 	qeffdt := pv.QuoteEffDt
 	qapplieddt := pv.QuoteAppliedDt
 
@@ -20,6 +20,6 @@ func RatingEngineImpl(pv ratingvariables.PolicyRatingVars, dv []ratingvariables.
 	fmt.Println(ratebookactvtndt)
 	//Process routinesteps
 
-	ProcessRoutinesteps(pv, dv, vv)
-
+	plcyprm = ProcessRoutinesteps(pv, dv, vv)
+	return plcyprm
 }

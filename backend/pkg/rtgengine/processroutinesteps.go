@@ -53,7 +53,7 @@ type RateStep struct {
 
 var RateStepTbl []RateStep
 
-func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariables.DriverRatingVars, vv []ratingvariables.VehicleRatingVars) {
+func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariables.DriverRatingVars, vv []ratingvariables.VehicleRatingVars) float32 {
 
 	plcyvar = pv
 	drvvar = dv
@@ -114,6 +114,7 @@ func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariabl
 		fmt.Println("Veh", vehidx+1, "premium = ", vehvar[vehidx].VehPremium)
 	}
 	fmt.Println("Policy Premium = ", plcyvar.PlcyPremium)
+	return plcyvar.PlcyPremium
 }
 
 func CopyRoutineStp2Tbl(i int, s ratingtables.RateRoutinSteps) {

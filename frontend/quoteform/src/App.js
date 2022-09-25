@@ -47,18 +47,17 @@ function App() {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        
         body: JSON.stringify({quotenumber,effDate,policyterm, driverformFields,vehicleformFields})
     };
-    // console.log(requestOptions.body)
-    // var newData =[...quoteformFields]
+   
     fetch(url, requestOptions)
-        // .then(response => console.log(response.json()))
-        .then(alert(`Quote created successfully`))
-        .then(window.location.reload(true))
+        .then(response =>response.json())
+        .then(data => alert("premium = " + data))
+        //.then(window.location.reload(true))
         .catch(error => console.log('Form submit error', error))
-  };
 
+  };
+  
   const addDriverFields = () => {
     let object = {
       name: '', age: 0 ,experience:0, course: '',incidentdate:'', incidenttype:'',maritalstatcode:''

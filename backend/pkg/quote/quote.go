@@ -136,11 +136,11 @@ func NewQuote(c *fiber.Ctx) error {
 	drvratvars := ratingvariables.PopDriverRatingVars(quote.Drivers)
 
 	//call rating engine passing derived rating variables
-	rtgengine.RatingEngineImpl(plcyratvars, drvratvars, vehratvars)
+	quote.Premium = rtgengine.RatingEngineImpl(plcyratvars, drvratvars, vehratvars)
 
 	db.Create(&quote)
 	fmt.Println(time.Now())
-	return c.JSON(quote)
+	return c.JSON(quote.Premium)
 }
 
 func DeleteQuote(c *fiber.Ctx) error {
