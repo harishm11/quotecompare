@@ -12,11 +12,14 @@ func RatingEngineImpl(pv ratingvariables.PolicyRatingVars, dv []ratingvariables.
 	qapplieddt := pv.QuoteAppliedDt
 
 	//select ratebook using quote effective date and quote applied date
-	var ratebookcode = RatebookSelector(qeffdt, qapplieddt)
-	fmt.Println("Quote eff date ", pv.QuoteEffDt)
-	fmt.Println("Ratebook code", ratebookcode)
+	var ratebookcode, ratebookactvtndt = RatebookSelector(qeffdt, qapplieddt)
+	pv.RatebookCode = ratebookcode
+	pv.RatebookActivationDate = ratebookactvtndt
 
+	fmt.Println(ratebookcode)
+	fmt.Println(ratebookactvtndt)
 	//Process routinesteps
+
 	ProcessRoutinesteps(pv, dv, vv)
 
 }

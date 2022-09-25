@@ -8,20 +8,22 @@ import (
 )
 
 type PolicyRatingVars struct {
-	QuoteEffDt         time.Time
-	QuoteAppliedDt     time.Time
-	AutoHomeDisc       bool
-	AutoHomeLifeDisc   bool
-	AutoLifeDisc       bool
-	AutoRenterDisc     bool
-	AutoRenterLifeDisc bool
-	AutoCeaDisc        bool
-	Policyterm         int
-	TotalVehicles      int
-	TotalDrivers       int
-	MultiCarDisc       bool
-	MatureDrvDisc      bool
-	PersistencyDisc    bool
+	QuoteEffDt             time.Time
+	QuoteAppliedDt         time.Time
+	AutoHomeDisc           bool
+	AutoHomeLifeDisc       bool
+	AutoLifeDisc           bool
+	AutoRenterDisc         bool
+	AutoRenterLifeDisc     bool
+	AutoCeaDisc            bool
+	Policyterm             int
+	TotalVehicles          int
+	TotalDrivers           int
+	MultiCarDisc           bool
+	MatureDrvDisc          bool
+	PersistencyDisc        bool
+	RatebookCode           string
+	RatebookActivationDate time.Time
 }
 
 type DriverRatingVars struct {

@@ -7,10 +7,11 @@ type Quote struct {
 	QuoteNumber  int       `json:"quotenumber"`
 	QuoteEffDate time.Time `json:"effdate"`
 	// Lob         string    `json:"lob"`
-	Drivers           []Driver  `json:"driverformFields" gorm:"foreignKey:QuoteID" `
-	Vehicles          []Vehicle `json:"vehicleformFields" gorm:"foreignKey:QuoteID" `
-	RateTermStartDate time.Time
-	RateAppliedDate   time.Time
-	QuoteStartDate    time.Time
-	Policyterm        int
+	Drivers                []Driver  `json:"driverformFields" gorm:"foreignKey:QuoteID" `
+	Vehicles               []Vehicle `json:"vehicleformFields" gorm:"foreignKey:QuoteID" `
+	RateTermStartDate      time.Time
+	RateAppliedDate        time.Time
+	QuoteStartDate         time.Time
+	Policyterm             int
+	
 }

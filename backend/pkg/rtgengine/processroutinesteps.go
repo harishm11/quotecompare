@@ -3,6 +3,7 @@ package rtgengine
 import (
 	"fmt"
 	"strconv"
+	"time"
 
 	"github.com/harishm11/quoteCompare/database"
 	"github.com/harishm11/quoteCompare/pkg/ratingvariables"
@@ -14,36 +15,39 @@ var drvvar []ratingvariables.DriverRatingVars
 var vehvar []ratingvariables.VehicleRatingVars
 
 type RateStep struct {
-	RoutineId          string
-	CoverageCode       string
-	StepNo             int
-	RefStepNo          int
-	RatingItemCode     string
-	RatingItemGrpCode  string
-	StepOperation      string
-	StepCalcMethod     string
-	StepSplMethod      string
-	CvgCodetoGetFctr   string
-	RateVar1Code       string
-	RateVar1Value      string
-	RateVar2Code       string
-	RateVar2Value      string
-	RateVar3Code       string
-	RateVar3Value      string
-	RateVar4Code       string
-	RateVar4Value      string
-	RateVar5Code       string
-	RateVar5Value      string
-	RateVar6Code       string
-	RateVar6Value      string
-	RateVar7Code       string
-	RateVar7Value      string
-	RateVar8Code       string
-	RateVar8Value      string
-	DefaultValue       float32
-	RoundorTrunc       string
-	RoundorTruncDigits int
-	RateFactor         float32
+	RoutineId              string
+	CoverageCode           string
+	StepNo                 int
+	RefStepNo              int
+	RatingItemCode         string
+	RatingItemGrpCode      string
+	StepOperation          string
+	StepCalcMethod         string
+	StepSplMethod          string
+	CvgCodetoGetFctr       string
+	RateVar1Code           string
+	RateVar1Value          string
+	RateVar2Code           string
+	RateVar2Value          string
+	RateVar3Code           string
+	RateVar3Value          string
+	RateVar4Code           string
+	RateVar4Value          string
+	RateVar5Code           string
+	RateVar5Value          string
+	RateVar6Code           string
+	RateVar6Value          string
+	RateVar7Code           string
+	RateVar7Value          string
+	RateVar8Code           string
+	RateVar8Value          string
+	DefaultValue           float32
+	RoundorTrunc           string
+	RoundorTruncDigits     int
+	RateFactor             float32
+	RateEffDate            time.Time
+	RatebookActivationDate time.Time
+	RateActivationDate     time.Time
 }
 
 var RateStepTbl []RateStep
@@ -57,27 +61,37 @@ func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariabl
 	//Read the Routinesteps
 
 	var steps []ratingtables.RateRoutinSteps
-	rout_id := "R001"
-	db := database.DBConn
-	db.Table("rate_routin_steps").Where("routine_id = ? ", rout_id).Scan(&steps)
 
+	//Get RoutineId based on Ratebook code
+	rout_id := GetRoutinId(pv.RatebookCode)
+
+	fmt.Println(rout_id)
+	//Get Routinesteps based on RoutineId
+	db := database.DBConn
+	db.Table("rate_routin_steps").Where("routine_id = ? ", rout_id).Order("coverage_code , step_no").Scan(&steps)
+
+	//create working storage table with routinesteps
 	RateStepTbl = make([]RateStep, len(steps))
 
 	//Execute the Routinesteps for each vehicle
-
 	for vehidx := range vehvar {
 		for stpidx := range steps {
+			//copy routinesteps to working storage table
 			CopyRoutineStp2Tbl(stpidx, steps[stpidx])
+
+			//populate rating variable valies in working storage table
 			GetStpRatingVarValue(stpidx, vehidx)
+
+			//populate ratebook activation date in WS table
+			RateStepTbl[stpidx].RatebookActivationDate = pv.RatebookActivationDate
+			RateStepTbl[stpidx].RateEffDate = pv.QuoteEffDt
+
+			//retrieve factor and rateactivation date and store in working storage table
+			RateStepTbl[stpidx].RateFactor, RateStepTbl[stpidx].RateActivationDate = GetRatingFactor(RateStepTbl[stpidx])
+
 			fmt.Println(RateStepTbl[stpidx])
-			// if RateStepTbl[stpidx].RatingItemCode == "RI001" || RateStepTbl[stpidx].RatingItemCode == "RI002" {
-			// 	GetRatingFactor(stpidx)
-			// }
-
 		}
-
 	}
-
 }
 
 func CopyRoutineStp2Tbl(i int, s ratingtables.RateRoutinSteps) {
@@ -188,29 +202,4 @@ func LookupRatVarValue(stpidx int, vehidx int, RateVarCode string) string {
 
 	}
 	return RateVarValue
-}
-
-func GetRatingFactor(stpidx int) {
-	var factorRow ratingtables.RateFactors
-	db := database.DBConn
-	db.Table("rate_factors").Where("coverage_code = ? AND rating_item_code = ? AND (rate_var1_code= ? OR rate_var1_code is NULL ) AND	(rate_var1_value =? OR rate_var1_value is NULL ) AND (rate_var2_code= ? OR rate_var2_code is NULL )AND (rate_var2_value =? OR rate_var2_value is NULL )AND (rate_var3_code= ? OR rate_var3_code is NULL ) AND (rate_var3_value =? OR rate_var3_value is NULL )AND (rate_var4_code= ? OR rate_var4_code is NULL )AND (rate_var4_value =? OR rate_var4_value is NULL )AND(rate_var5_code= ? OR rate_var5_code is NULL ) AND	(rate_var5_value =? OR rate_var5_value is NULL ) AND (rate_var6_code= ? OR rate_var6_code is NULL )AND (rate_var6_value =? OR rate_var6_value is NULL )AND (rate_var7_code= ? OR rate_var7_code is NULL ) AND (rate_var7_value =? OR rate_var7_value is NULL )AND (rate_var8_code= ? OR rate_var8_code is NULL )AND (rate_var8_value =? OR rate_var8_value is NULL )  ",
-		RateStepTbl[stpidx].CvgCodetoGetFctr, RateStepTbl[stpidx].RatingItemCode,
-		RateStepTbl[stpidx].RateVar1Code, RateStepTbl[stpidx].RateVar1Value,
-		RateStepTbl[stpidx].RateVar2Code, RateStepTbl[stpidx].RateVar2Value,
-		RateStepTbl[stpidx].RateVar3Code, RateStepTbl[stpidx].RateVar3Value,
-		RateStepTbl[stpidx].RateVar4Code, RateStepTbl[stpidx].RateVar4Value,
-		RateStepTbl[stpidx].RateVar5Code, RateStepTbl[stpidx].RateVar5Value,
-		RateStepTbl[stpidx].RateVar6Code, RateStepTbl[stpidx].RateVar6Value,
-		RateStepTbl[stpidx].RateVar7Code, RateStepTbl[stpidx].RateVar7Value,
-		RateStepTbl[stpidx].RateVar8Code, RateStepTbl[stpidx].RateVar8Value).Select("rate_factor").First(&factorRow)
-
-	// if err != nil {
-	// 	RateStepTbl[stpidx].RateFactor = 1.00
-	// 	fmt.Println(err)
-	// } else {
-
-	// }
-	RateStepTbl[stpidx].RateFactor = factorRow.RateFactor
-	fmt.Println(RateStepTbl[stpidx])
-
 }

@@ -32,7 +32,7 @@ func InitDatabase() {
 
 	//Rating tables
 	DBConn.AutoMigrate(&ratingtables.Ratebooks{})
-	DBConn.AutoMigrate(&ratingtables.Routines{})
+	DBConn.AutoMigrate(&ratingtables.RateRoutines{})
 	DBConn.AutoMigrate(&ratingtables.RateFactors{})
 	DBConn.AutoMigrate(&ratingtables.RateRoutinSteps{})
 
