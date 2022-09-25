@@ -51,6 +51,10 @@ func NewQuote(c *fiber.Ctx) error {
 	var c1 = models.Coverage{}
 	var c2 = models.Coverage{}
 	var c3 = models.Coverage{}
+	var c4 = models.Coverage{}
+	var c5 = models.Coverage{}
+	var c6 = models.Coverage{}
+	var c7 = models.Coverage{}
 
 	c1 =
 		models.Coverage{
@@ -80,11 +84,50 @@ func NewQuote(c *fiber.Ctx) error {
 			Deductible:         "500",
 			CvgPremium:         0.0,
 		}
+	c4 =
+		models.Coverage{
+			CoverageCode:       "Medical",
+			CvgSymbol:          "",
+			LimitPerPerson:     "5000",
+			LimitPerOccurrence: "",
+			Deductible:         "",
+			CvgPremium:         0.0,
+		}
+	c5 =
+		models.Coverage{
+			CoverageCode:       "Collision",
+			CvgSymbol:          "",
+			LimitPerPerson:     "",
+			LimitPerOccurrence: "",
+			Deductible:         "500",
+			CvgPremium:         0.0,
+		}
+	c6 =
+		models.Coverage{
+			CoverageCode:       "UninsuredMotoristBI",
+			CvgSymbol:          "",
+			LimitPerPerson:     "100000",
+			LimitPerOccurrence: "",
+			Deductible:         "300000",
+			CvgPremium:         0.0,
+		}
+	c7 =
+		models.Coverage{
+			CoverageCode:       "UninsuredMotoristPD",
+			CvgSymbol:          "",
+			LimitPerPerson:     "100000",
+			LimitPerOccurrence: "",
+			Deductible:         "",
+			CvgPremium:         0.0,
+		}
 	for vehidx := range quote.Vehicles {
 		quote.Vehicles[vehidx].Coverages = append(quote.Vehicles[vehidx].Coverages, c1)
 		quote.Vehicles[vehidx].Coverages = append(quote.Vehicles[vehidx].Coverages, c2)
 		quote.Vehicles[vehidx].Coverages = append(quote.Vehicles[vehidx].Coverages, c3)
-		//fmt.Println(quote.Vehicles[vehidx].Coverages)
+		quote.Vehicles[vehidx].Coverages = append(quote.Vehicles[vehidx].Coverages, c4)
+		quote.Vehicles[vehidx].Coverages = append(quote.Vehicles[vehidx].Coverages, c5)
+		quote.Vehicles[vehidx].Coverages = append(quote.Vehicles[vehidx].Coverages, c6)
+		quote.Vehicles[vehidx].Coverages = append(quote.Vehicles[vehidx].Coverages, c7)
 	}
 
 	//derive rating variables from the quote data

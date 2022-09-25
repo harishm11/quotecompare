@@ -24,6 +24,7 @@ type PolicyRatingVars struct {
 	PersistencyDisc        bool
 	RatebookCode           string
 	RatebookActivationDate time.Time
+	PlcyPremium            float32
 }
 
 type DriverRatingVars struct {
@@ -50,6 +51,7 @@ type VehicleRatingVars struct {
 	Zipcode            string
 	Modelyear          int
 	Symbol             int
+	VehPremium         float32
 	CoverageRatingVars []CoverageRatingVars
 }
 

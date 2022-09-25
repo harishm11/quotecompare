@@ -45,6 +45,7 @@ type RateStep struct {
 	RoundorTrunc           string
 	RoundorTruncDigits     int
 	RateFactor             float32
+	StepResult             float32
 	RateEffDate            time.Time
 	RatebookActivationDate time.Time
 	RateActivationDate     time.Time
@@ -72,10 +73,12 @@ func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariabl
 
 	//create working storage table with routinesteps
 	RateStepTbl = make([]RateStep, len(steps))
-
+	var tempcvg string
+	var tempcvgprem float32
 	//Execute the Routinesteps for each vehicle
 	for vehidx := range vehvar {
 		for stpidx := range steps {
+
 			//copy routinesteps to working storage table
 			CopyRoutineStp2Tbl(stpidx, steps[stpidx])
 
@@ -89,9 +92,28 @@ func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariabl
 			//retrieve factor and rateactivation date and store in working storage table
 			RateStepTbl[stpidx].RateFactor, RateStepTbl[stpidx].RateActivationDate = GetRatingFactor(RateStepTbl[stpidx])
 
-			fmt.Println(RateStepTbl[stpidx])
+			if RateStepTbl[stpidx].CoverageCode != tempcvg {
+				RateStepTbl[stpidx].StepResult = RateStepTbl[stpidx].RateFactor
+				tempcvg = RateStepTbl[stpidx].CoverageCode
+			} else {
+				RateStepTbl[stpidx].StepResult = RateStepTbl[stpidx-1].StepResult * RateStepTbl[stpidx].RateFactor
+			}
+
+			if RateStepTbl[stpidx].RatingItemCode == "" {
+				for cvgidx := range vehvar[vehidx].CoverageRatingVars {
+					if RateStepTbl[stpidx].CoverageCode == vehvar[vehidx].CoverageRatingVars[cvgidx].CoverageCode {
+						tempcvgprem = RateStepTbl[stpidx].StepResult
+						vehvar[vehidx].CoverageRatingVars[cvgidx].CvgPremium = RateStepTbl[stpidx].StepResult
+						vehvar[vehidx].VehPremium = vehvar[vehidx].VehPremium + tempcvgprem
+						plcyvar.PlcyPremium = plcyvar.PlcyPremium + tempcvgprem
+						fmt.Println(tempcvg, "Coverage premium = ", tempcvgprem)
+					}
+				}
+			}
 		}
+		fmt.Println("Veh", vehidx+1, "premium = ", vehvar[vehidx].VehPremium)
 	}
+	fmt.Println("Policy Premium = ", plcyvar.PlcyPremium)
 }
 
 func CopyRoutineStp2Tbl(i int, s ratingtables.RateRoutinSteps) {
