@@ -9,14 +9,15 @@ import (
 
 func main() {
 	app := fiber.New()
-	urls.SetupRoutes(app)
-	database.InitDatabase()
+
 	app.Use(cors.New(cors.Config{
 		AllowHeaders:     "Origin,Content-Type,Accept",
 		AllowOrigins:     "*",
 		AllowCredentials: true,
 		AllowMethods:     "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
 	}))
+	urls.SetupRoutes(app)
+	database.InitDatabase()
 	app.Listen(":8000")
 
 }

@@ -1,10 +1,10 @@
 package ratingtables
 
 type RateRoutinSteps struct {
-	RoutineId          string `gorm:"primaryKey"`
-	CoverageCode       string `gorm:"primaryKey"`
-	StepNo             uint
-	RefStepNo          uint
+	RoutineId          string
+	CoverageCode       string
+	StepNo             int
+	RefStepNo          int
 	RatingItemCode     string
 	RatingItemGrpCode  string
 	StepOperation      string
@@ -21,5 +21,5 @@ type RateRoutinSteps struct {
 	RateVar8Code       string
 	DefaultValue       float32
 	RoundorTrunc       string
-	RoundorTruncDigits uint
+	RoundorTruncDigits int
 }

@@ -6,8 +6,6 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/harishm11/quoteCompare/database"
-	"github.com/harishm11/quoteCompare/pkg/ratingvariables"
-	"github.com/harishm11/quoteCompare/pkg/rtgengine"
 	"github.com/harishm11/quoteCompare/tables/models"
 )
 
@@ -33,28 +31,25 @@ func GetQuote(c *fiber.Ctx) error {
 }
 
 func NewQuote(c *fiber.Ctx) error {
+	fmt.Println(time.Now())
 	db := database.DBConn
 	quote := new(models.Quote)
+
+	//parse the input json quote request
 	if err := c.BodyParser(quote); err != nil {
 		panic(err)
-
 	}
 
 	quote.RateTermStartDate = quote.QuoteEffDate
 	quote.RateAppliedDate = time.Now()
 	quote.QuoteStartDate = time.Now()
 
-	plcyratvars := ratingvariables.PopPolicyRatingVars(quote)
-	vehratvars := ratingvariables.PopVehicleRatingVars(quote.Vehicles)
-	drvratvars := ratingvariables.PopDriverRatingVars(quote.Drivers)
-
-	rtgengine.RatingEngineImpl(quote)
-	fmt.Println(plcyratvars)
-	fmt.Println(vehratvars)
-	fmt.Println(drvratvars)
+	//Populate Good Coverages
+	InvokeRtgEngine(quote)
 
 	db.Create(&quote)
-	return c.JSON(quote)
+	fmt.Println(time.Now())
+	return c.JSON(quote.GoodPremium)
 }
 
 func DeleteQuote(c *fiber.Ctx) error {

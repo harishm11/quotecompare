@@ -12,5 +12,8 @@ type Quote struct {
 	RateTermStartDate time.Time
 	RateAppliedDate   time.Time
 	QuoteStartDate    time.Time
-	Policyterm        uint
+	Policyterm        int
+	GoodPremium       float32
+	BetterPremium     float32
+	BestPremium       float32
 }
