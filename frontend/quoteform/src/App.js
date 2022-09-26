@@ -52,6 +52,7 @@ function App() {
    
     fetch(url, requestOptions)
         .then(response =>response.json())
+        //.then(data => console.log(data) )
         .then(data => alert("premium = " + data))
         //.then(window.location.reload(true))
         .catch(error => console.log('Form submit error', error))
