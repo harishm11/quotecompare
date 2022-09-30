@@ -42,7 +42,13 @@ function App() {
   }
   const handleSubmit = event => {
     event.preventDefault();
-    
+    const current = new Date();
+             // By default US English uses 12hr time with AM/PM
+    const time = current.toISOString();
+    //toLocaleTimeString("en-US");
+
+    console.log(time);
+
     const url = 'http://localhost:8000/quoteApi/quote'
     const requestOptions = {
         method: 'POST',
