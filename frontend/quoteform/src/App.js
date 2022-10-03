@@ -27,6 +27,7 @@ function App() {
     let data = [...quoteformFields];
     data[index][event.target.name] = event.target.value;
     setquoteformFields(data);
+    
   }
 
   const handleDriverFormChange = (event, index) => {
@@ -42,13 +43,8 @@ function App() {
   }
   const handleSubmit = event => {
     event.preventDefault();
-    const current = new Date();
-             // By default US English uses 12hr time with AM/PM
-    const time = current.toISOString();
-    //toLocaleTimeString("en-US");
-
-    console.log(time);
-
+    console.log("from submit")
+    console.log(new Date().toISOString())
     const url = 'http://localhost:8000/quoteApi/quote'
     const requestOptions = {
         method: 'POST',
@@ -60,7 +56,9 @@ function App() {
         .then(response =>response.json())
         //.then(data => console.log(data) )
         .then(data => alert("premium = " + data))
+        .then(console.log("After response"))
         //.then(window.location.reload(true))
+        .then(console.log(new Date().toISOString()))
         .catch(error => console.log('Form submit error', error))
 
   };
