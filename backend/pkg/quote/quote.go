@@ -1,7 +1,6 @@
 package quote
 
 import (
-	"fmt"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
@@ -31,7 +30,7 @@ func GetQuote(c *fiber.Ctx) error {
 }
 
 func NewQuote(c *fiber.Ctx) error {
-	fmt.Println(time.Now())
+
 	db := database.DBConn
 	quote := new(models.Quote)
 
@@ -39,17 +38,12 @@ func NewQuote(c *fiber.Ctx) error {
 	if err := c.BodyParser(quote); err != nil {
 		panic(err)
 	}
-
 	quote.RateTermStartDate = quote.QuoteEffDate
 	quote.RateAppliedDate = time.Now()
 	quote.QuoteStartDate = time.Now()
 
-	//Populate Good Coverages
-	InvokeRtgEngine(quote)
-
 	db.Create(&quote)
-	fmt.Println(time.Now())
-	return c.JSON(quote.GoodPremium)
+	return c.JSON(quote)
 }
 
 func DeleteQuote(c *fiber.Ctx) error {

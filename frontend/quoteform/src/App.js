@@ -19,7 +19,7 @@ function App() {
     { name: '', age: 0 ,experience:0, course: '',incidentdate:'', incidenttype:'',maritalstatcode:''},
   ])
   const [vehicleformFields, setvehicleformFields] = useState([
-    { vehyear:1987, vehmake: '' ,vehmodel: '', annualMileage: 10000,grgZip:'',vehicleusage:''},
+    { vehyear:2001, vehmake: '' ,vehmodel: '', annualMileage: 10000,grgZip:'',vehicleusage:''},
   ])
 
   
@@ -45,7 +45,7 @@ function App() {
     event.preventDefault();
     console.log("from submit")
     console.log(new Date().toISOString())
-    const url = 'http://localhost:8000/quoteApi/quote'
+    const url = 'http://localhost:8000/quoteApi/rating'
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -78,7 +78,7 @@ function App() {
 
   const addVehicleFields = () => {
     let object = {
-       vehyear:1987, vehmake: '' ,vehmodel: '', annualMileage: 10000,grgZip:'',vehicleusage:''
+       vehyear:2001, vehmake: '' ,vehmodel: '', annualMileage: 10000,grgZip:'',vehicleusage:''
     }
     setvehicleformFields([...vehicleformFields, object])
   }

@@ -97,8 +97,13 @@ func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariabl
 			RateStepTbl[stpidx].RateEffDate = pv.QuoteEffDt
 
 			//retrieve factor and rateactivation date and store in working storage table
-			RateStepTbl[stpidx].RateFactor, RateStepTbl[stpidx].RateActivationDate = GetRatingFactor(RateStepTbl[stpidx])
+			if RateStepTbl[stpidx].StepCalcMethod != "StoreResult" {
+				RateStepTbl[stpidx].RateFactor, RateStepTbl[stpidx].RateActivationDate = GetRatingFactor(RateStepTbl[stpidx])
+			} else {
+				RateStepTbl[stpidx].RateFactor = 1.00
+				RateStepTbl[stpidx].StepResult = RateStepTbl[stpidx-1].StepResult
 
+			}
 			if RateStepTbl[stpidx].CoverageCode != tempcvg {
 				RateStepTbl[stpidx].StepResult = RateStepTbl[stpidx].RateFactor
 				tempcvg = RateStepTbl[stpidx].CoverageCode
@@ -238,6 +243,9 @@ func LookupRatVarValue(stpidx int, vehidx int, RateVarCode string) string {
 		RateVarValue = vehvar[vehidx].SeverityBand
 	case "RideShareInd":
 		RateVarValue = strings.ToUpper(strconv.FormatBool(vehvar[vehidx].RideShareInd))
+	case "UMPDOption":
+		RateVarValue = "C2"
+		//strings.ToUpper(strconv.FormatBool(vehvar[vehidx].RideShareInd))
 
 	case "DPS":
 		RateVarValue = strconv.Itoa(drvvar[0].DPS)
@@ -274,6 +282,19 @@ func LookupRatVarValue(stpidx int, vehidx int, RateVarCode string) string {
 			}
 		}
 	case "Symbol":
+		for cvgidx := range vehvar[vehidx].CoverageRatingVars {
+			if vehvar[vehidx].CoverageRatingVars[cvgidx].CoverageCode == RateStepTbl[stpidx].CoverageCode {
+				RateVarValue = vehvar[vehidx].CoverageRatingVars[cvgidx].CvgSymbol
+			}
+		}
+	case "Symbol1":
+		for cvgidx := range vehvar[vehidx].CoverageRatingVars {
+			if vehvar[vehidx].CoverageRatingVars[cvgidx].CoverageCode == RateStepTbl[stpidx].CoverageCode {
+				RateVarValue = vehvar[vehidx].CoverageRatingVars[cvgidx].CvgSymbol
+			}
+
+		}
+	case "Symbol2":
 		for cvgidx := range vehvar[vehidx].CoverageRatingVars {
 			if vehvar[vehidx].CoverageRatingVars[cvgidx].CoverageCode == RateStepTbl[stpidx].CoverageCode {
 				RateVarValue = vehvar[vehidx].CoverageRatingVars[cvgidx].CvgSymbol

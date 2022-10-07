@@ -3,6 +3,7 @@ module github.com/harishm11/quoteCompare
 go 1.13
 
 require (
+	github.com/gofiber/fiber v1.14.6
 	github.com/gofiber/fiber/v2 v2.36.0
 	github.com/gofrs/uuid v4.2.0+incompatible // indirect
 	github.com/jackc/pgx/v4 v4.17.0 // indirect
