@@ -1,3 +1,5 @@
 backend/main/__debug_bin
 .DS_Store
 backend/.DS_Store
+backend/main/download/output.csv
+backend/main/download/output.json

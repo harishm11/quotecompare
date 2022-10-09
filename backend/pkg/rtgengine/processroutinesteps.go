@@ -11,6 +11,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/harishm11/quoteCompare/contracts"
 	"github.com/harishm11/quoteCompare/database"
 	"github.com/harishm11/quoteCompare/pkg/ratingvariables"
 	"github.com/harishm11/quoteCompare/tables/ratingtables"
@@ -59,20 +60,18 @@ type RateStep struct {
 
 var RateStepTbl []RateStep
 
-func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariables.DriverRatingVars, vv []ratingvariables.VehicleRatingVars) float32 {
+func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariables.DriverRatingVars, vv []ratingvariables.VehicleRatingVars) *contracts.RateResponse {
 
 	plcyvar = pv
 	drvvar = dv
 	vehvar = vv
-
-	//Read the Routinesteps
-
 	var steps []ratingtables.RateRoutinSteps
+	var rateresp = new(contracts.RateResponse)
+	var vehdetails = make([]contracts.VehData, len(vehvar))
 
 	//Get RoutineId based on Ratebook code
 	rout_id := GetRoutinId(pv.RatebookCode)
 
-	fmt.Println(rout_id)
 	//Get Routinesteps based on RoutineId
 	db := database.DBConn
 	db.Table("rate_routin_steps").Where("routine_id = ? ", rout_id).Order("coverage_code , step_no").Scan(&steps)
@@ -84,6 +83,8 @@ func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariabl
 
 	//Execute the Routinesteps for each vehicle
 	for vehidx := range vehvar {
+		rateresp.VehDetails = vehdetails
+		cvgdetails := make([]contracts.CvgData, len(vehvar[vehidx].CoverageRatingVars))
 		for stpidx := range steps {
 
 			//copy routinesteps to working storage table
@@ -113,22 +114,37 @@ func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariabl
 
 			if RateStepTbl[stpidx].StepCalcMethod == "StoreResult" {
 				for cvgidx := range vehvar[vehidx].CoverageRatingVars {
+
+					rateresp.VehDetails[vehidx].CvgDetails = cvgdetails
+
 					if RateStepTbl[stpidx].CoverageCode == vehvar[vehidx].CoverageRatingVars[cvgidx].CoverageCode {
 						tempcvgprem = RateStepTbl[stpidx].StepResult
 						vehvar[vehidx].CoverageRatingVars[cvgidx].CvgPremium = RateStepTbl[stpidx].StepResult
 						vehvar[vehidx].VehPremium = vehvar[vehidx].VehPremium + tempcvgprem
 						plcyvar.PlcyPremium = plcyvar.PlcyPremium + tempcvgprem
-						fmt.Println(tempcvg, "Coverage premium = ", tempcvgprem)
+						rateresp.VehDetails[vehidx].CvgDetails[cvgidx].Amount = tempcvgprem
+						rateresp.VehDetails[vehidx].CvgDetails[cvgidx].CoverageCode = tempcvg
+
 					}
 				}
 			}
 		}
-		fmt.Println("Veh", vehidx+1, "premium = ", vehvar[vehidx].VehPremium)
+		rateresp.VehDetails[vehidx].Vehid = vehvar[vehidx].VehicleId
+		rateresp.VehDetails[vehidx].Amount = vehvar[vehidx].VehPremium
+
 	}
-	fmt.Println("Policy Premium = ", plcyvar.PlcyPremium)
-	//fmt.Println(len(RateStepTbl))
+	rateresp.Amount = plcyvar.PlcyPremium
+
+	//Write the steps of calculation to worksheet
 	Generateworksheet(RateStepTbl)
-	return plcyvar.PlcyPremium
+
+	//prepare rate repsonse to pass back
+	b, err := json.Marshal(rateresp)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(string(b))
+	return rateresp
 
 }
 

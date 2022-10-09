@@ -1,10 +1,11 @@
-package quote
+package rate
 
 import (
 	"fmt"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/harishm11/quoteCompare/contracts"
 	"github.com/harishm11/quoteCompare/database"
 	"github.com/harishm11/quoteCompare/pkg/ratingvariables"
 	"github.com/harishm11/quoteCompare/pkg/rtgengine"
@@ -20,21 +21,18 @@ func Rate(c *fiber.Ctx) error {
 	if err := c.BodyParser(quote); err != nil {
 		panic(err)
 	}
-
 	quote.RateTermStartDate = quote.QuoteEffDate
 	quote.RateAppliedDate = time.Now()
 	quote.QuoteStartDate = time.Now()
-
 	//Populate Good Coverages
-	InvokeRtgEngine(quote)
-
+	rateresp := InvokeRtgEngine(quote)
 	db.Create(&quote)
 	fmt.Println(time.Now())
-	return c.JSON(quote.GoodPremium)
+	return c.JSON(rateresp)
 }
 
-func InvokeRtgEngine(quote *models.Quote) {
-
+func InvokeRtgEngine(quote *models.Quote) *contracts.RateResponse {
+	var rateresp = new(contracts.RateResponse)
 	var c1 = models.Coverage{CoverageCode: "BodilyInjury", CvgSymbol: "1", LimitPerPerson: "100000", LimitPerOccurrence: "300000", Deductible: "", CvgPremium: 0.0}
 	var c2 = models.Coverage{CoverageCode: "PropertyDamage", CvgSymbol: "1", LimitPerPerson: "100000", LimitPerOccurrence: "", Deductible: "", CvgPremium: 0.0}
 	var c3 = models.Coverage{CoverageCode: "Comprehensive", CvgSymbol: "1", LimitPerPerson: "", LimitPerOccurrence: "", Deductible: "500", CvgPremium: 0.0}
@@ -59,8 +57,7 @@ func InvokeRtgEngine(quote *models.Quote) {
 	drvratvars := ratingvariables.PopDriverRatingVars(quote.Drivers)
 
 	//call rating engine passing derived rating variables
-	quote.GoodPremium = rtgengine.RatingEngineImpl(plcyratvars, drvratvars, vehratvars)
-	// quote.BetterPremium = rtgengine.RatingEngineImpl(plcyratvars, drvratvars, vehratvars)
-	// quote.BestPremium = rtgengine.RatingEngineImpl(plcyratvars, drvratvars, vehratvars)
+	rateresp = rtgengine.RatingEngineImpl(plcyratvars, drvratvars, vehratvars)
 
+	return rateresp
 }
