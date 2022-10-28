@@ -139,11 +139,11 @@ func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariabl
 	Generateworksheet(RateStepTbl)
 
 	//prepare rate repsonse to pass back
-	b, err := json.Marshal(rateresp)
+	_, err := json.Marshal(rateresp)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(string(b))
+	//fmt.Println(string(b))
 	return rateresp
 
 }

@@ -51,7 +51,7 @@ function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({quotenumber,effDate,policyterm, driverformFields,vehicleformFields})
     };
-   
+    console.log(requestOptions.body)
     fetch(url, requestOptions)
         .then(response =>response.json())
         //.then(data => console.log(data) )
