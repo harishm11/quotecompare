@@ -16,4 +16,10 @@ type Quote struct {
 	GoodPremium       float32
 	BetterPremium     float32
 	BestPremium       float32
+	AutoUmbrellaInd   bool
+	AutoHomeInd       bool
+	AutoHomeLifeInd   bool
+	AutoLifeInd       bool
+	AutoRenterInd     bool
+	AutoRenterLifeInd bool
 }

@@ -7,12 +7,14 @@ type RateResponse struct {
 }
 type CvgData struct {
 	CoverageCode string
+	CvgSymbol    string
 	Amount       float32
 }
 
 type VehData struct {
 	Vehid      uint
 	Amount     float32
+	CarSymbol  string
 	CvgDetails []CvgData
 }
 

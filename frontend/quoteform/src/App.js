@@ -5,7 +5,13 @@ import './App.css';
 
 function App() {
   const [quoteformFields, setquoteformFields] = useState(
-    [{ quotenumber :Math.floor(Math.random() * 999999999) ,effDate:'',policyterm:6}]
+    [{ quotenumber :Math.floor(Math.random() * 999999999) ,effDate:'',policyterm:6
+  ,AutoUmbrellaInd :'',
+	AutoHomeInd       :'',
+	AutoHomeLifeInd  :'',
+	AutoLifeInd       :'',
+	AutoRenterInd     :'',
+	AutoRenterLifeInd :''}]
   )
 
   
@@ -16,8 +22,10 @@ function App() {
   
 
   const [driverformFields, setdriverformFields] = useState([
-    { name: '', age: 0 ,experience:0, course: '',incidentdate:'', incidenttype:'',maritalstatcode:''},
+    { name: '', age: 0 ,experience:0, course: '',incidentdate:'', incidenttype:'',maritalstatcode:''
+    ,licissuedt:new Date(),goodstudent:'',dateofbirth:new Date(),drveraddeddt:new Date(),occupation:'',pniind:'',relationtopni:''},
   ])
+  
   const [vehicleformFields, setvehicleformFields] = useState([
     { vehyear:2001, vehmake: '' ,vehmodel: '', annualMileage: 10000,grgZip:'',vehicleusage:''},
   ])
@@ -67,6 +75,7 @@ function App() {
   const addDriverFields = () => {
     let object = {
       name: '', age: 0 ,experience:0, course: '',incidentdate:'', incidenttype:'',maritalstatcode:''
+    ,licissuedt:new Date(),goodstudent:'',dateofbirth:new Date(),drveraddeddt:new Date(),occupation:'',pniind:'',relationtopni:''
     }
     setdriverformFields([...driverformFields, object])
   }
@@ -180,6 +189,48 @@ function App() {
                 placeholder='Marital status code'
                 onChange={event => handleDriverFormChange(event, index)}
                 value={form.maritalstatcode}
+              />
+              <input
+                name='licissuedt'
+                placeholder='License Issue Date'
+                onChange={event => handleDriverFormChange(event, index)}
+                value={form.licissuedt}
+              />
+              <input
+                name='goodstudent'
+                placeholder='Good Student Indicator'
+                onChange={event => handleDriverFormChange(event, index)}
+                value={form.goodstudent}
+              />
+              <input
+                name='dateofbirth'
+                placeholder='Date of Birth'
+                onChange={event => handleDriverFormChange(event, index)}
+                value={form.dateofbirth}
+              />
+              <input
+                name='drveraddeddt'
+                placeholder='Driver Added Date'
+                onChange={event => handleDriverFormChange(event, index)}
+                value={form.drveraddeddt}
+              />
+              <input
+                name='occupation'
+                placeholder='Occupation'
+                onChange={event => handleDriverFormChange(event, index)}
+                value={form.occupation}
+              />
+              <input
+                name='pniind'
+                placeholder='PNI Indicator'
+                onChange={event => handleDriverFormChange(event, index)}
+                value={form.pniind}
+              />
+              <input
+                name='relationtopni'
+                placeholder='Relationship to PNI'
+                onChange={event => handleDriverFormChange(event, index)}
+                value={form.relationtopni}
               />
               <button onClick={addDriverFields}>Add</button>
               <button onClick={() => removeDriverFields(index)}>Remove</button>
