@@ -5,6 +5,7 @@ import (
 
 	"github.com/harishm11/quoteCompare/tables/models"
 	"github.com/harishm11/quoteCompare/tables/ratingtables"
+	"github.com/harishm11/quoteCompare/tables/ruletables"
 	"github.com/harishm11/quoteCompare/tables/systemtables"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -39,6 +40,12 @@ func InitDatabase() {
 	//System tables
 	DBConn.AutoMigrate(&systemtables.States{})
 	DBConn.AutoMigrate(&systemtables.CompanyNAIC{})
+
+
+	//Rule tables
+	DBConn.AutoMigrate(&ruletables.DiscountRules{})
+
+
 
 	if err != nil {
 		panic("Automigrate to database Failed")

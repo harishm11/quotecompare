@@ -1,13 +1,11 @@
 package rtgengine
 
 import (
-	"fmt"
-
+	"github.com/harishm11/quoteCompare/contracts"
 	"github.com/harishm11/quoteCompare/pkg/ratingvariables"
 )
 
-func RatingEngineImpl(pv ratingvariables.PolicyRatingVars, dv []ratingvariables.DriverRatingVars, vv []ratingvariables.VehicleRatingVars) float32 {
-	var plcyprm float32
+func RatingEngineImpl(pv ratingvariables.PolicyRatingVars, dv []ratingvariables.DriverRatingVars, vv []ratingvariables.VehicleRatingVars) *contracts.RateResponse {
 	qeffdt := pv.QuoteEffDt
 	qapplieddt := pv.QuoteAppliedDt
 
@@ -16,10 +14,7 @@ func RatingEngineImpl(pv ratingvariables.PolicyRatingVars, dv []ratingvariables.
 	pv.RatebookCode = ratebookcode
 	pv.RatebookActivationDate = ratebookactvtndt
 
-	fmt.Println(ratebookcode)
-	fmt.Println(ratebookactvtndt)
 	//Process routinesteps
-
-	plcyprm = ProcessRoutinesteps(pv, dv, vv)
-	return plcyprm
+	rateresp := ProcessRoutinesteps(pv, dv, vv)
+	return rateresp
 }

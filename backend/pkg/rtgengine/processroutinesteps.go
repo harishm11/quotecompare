@@ -1,10 +1,17 @@
 package rtgengine
 
 import (
+	"encoding/csv"
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"os"
+	"path"
 	"strconv"
+	"strings"
 	"time"
 
+	"github.com/harishm11/quoteCompare/contracts"
 	"github.com/harishm11/quoteCompare/database"
 	"github.com/harishm11/quoteCompare/pkg/ratingvariables"
 	"github.com/harishm11/quoteCompare/tables/ratingtables"
@@ -53,20 +60,18 @@ type RateStep struct {
 
 var RateStepTbl []RateStep
 
-func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariables.DriverRatingVars, vv []ratingvariables.VehicleRatingVars) float32 {
+func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariables.DriverRatingVars, vv []ratingvariables.VehicleRatingVars) *contracts.RateResponse {
 
 	plcyvar = pv
 	drvvar = dv
 	vehvar = vv
-
-	//Read the Routinesteps
-
 	var steps []ratingtables.RateRoutinSteps
+	var rateresp = new(contracts.RateResponse)
+	var vehdetails = make([]contracts.VehData, len(vehvar))
 
 	//Get RoutineId based on Ratebook code
 	rout_id := GetRoutinId(pv.RatebookCode)
 
-	fmt.Println(rout_id)
 	//Get Routinesteps based on RoutineId
 	db := database.DBConn
 	db.Table("rate_routin_steps").Where("routine_id = ? ", rout_id).Order("coverage_code , step_no").Scan(&steps)
@@ -75,8 +80,11 @@ func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariabl
 	RateStepTbl = make([]RateStep, len(steps))
 	var tempcvg string
 	var tempcvgprem float32
+
 	//Execute the Routinesteps for each vehicle
 	for vehidx := range vehvar {
+		rateresp.VehDetails = vehdetails
+		cvgdetails := make([]contracts.CvgData, len(vehvar[vehidx].CoverageRatingVars))
 		for stpidx := range steps {
 
 			//copy routinesteps to working storage table
@@ -90,8 +98,13 @@ func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariabl
 			RateStepTbl[stpidx].RateEffDate = pv.QuoteEffDt
 
 			//retrieve factor and rateactivation date and store in working storage table
-			RateStepTbl[stpidx].RateFactor, RateStepTbl[stpidx].RateActivationDate = GetRatingFactor(RateStepTbl[stpidx])
+			if RateStepTbl[stpidx].StepCalcMethod != "StoreResult" {
+				RateStepTbl[stpidx].RateFactor, RateStepTbl[stpidx].RateActivationDate = GetRatingFactor(RateStepTbl[stpidx])
+			} else {
+				RateStepTbl[stpidx].RateFactor = 1.00
+				RateStepTbl[stpidx].StepResult = RateStepTbl[stpidx-1].StepResult
 
+			}
 			if RateStepTbl[stpidx].CoverageCode != tempcvg {
 				RateStepTbl[stpidx].StepResult = RateStepTbl[stpidx].RateFactor
 				tempcvg = RateStepTbl[stpidx].CoverageCode
@@ -99,22 +112,40 @@ func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariabl
 				RateStepTbl[stpidx].StepResult = RateStepTbl[stpidx-1].StepResult * RateStepTbl[stpidx].RateFactor
 			}
 
-			if RateStepTbl[stpidx].RatingItemCode == "" {
+			if RateStepTbl[stpidx].StepCalcMethod == "StoreResult" {
 				for cvgidx := range vehvar[vehidx].CoverageRatingVars {
+
+					rateresp.VehDetails[vehidx].CvgDetails = cvgdetails
+
 					if RateStepTbl[stpidx].CoverageCode == vehvar[vehidx].CoverageRatingVars[cvgidx].CoverageCode {
 						tempcvgprem = RateStepTbl[stpidx].StepResult
 						vehvar[vehidx].CoverageRatingVars[cvgidx].CvgPremium = RateStepTbl[stpidx].StepResult
 						vehvar[vehidx].VehPremium = vehvar[vehidx].VehPremium + tempcvgprem
 						plcyvar.PlcyPremium = plcyvar.PlcyPremium + tempcvgprem
-						fmt.Println(tempcvg, "Coverage premium = ", tempcvgprem)
+						rateresp.VehDetails[vehidx].CvgDetails[cvgidx].Amount = tempcvgprem
+						rateresp.VehDetails[vehidx].CvgDetails[cvgidx].CoverageCode = tempcvg
+
 					}
 				}
 			}
 		}
-		fmt.Println("Veh", vehidx+1, "premium = ", vehvar[vehidx].VehPremium)
+		rateresp.VehDetails[vehidx].Vehid = vehvar[vehidx].VehicleId
+		rateresp.VehDetails[vehidx].Amount = vehvar[vehidx].VehPremium
+
 	}
-	fmt.Println("Policy Premium = ", plcyvar.PlcyPremium)
-	return plcyvar.PlcyPremium
+	rateresp.Amount = plcyvar.PlcyPremium
+
+	//Write the steps of calculation to worksheet
+	Generateworksheet(RateStepTbl)
+
+	//prepare rate repsonse to pass back
+	_, err := json.Marshal(rateresp)
+	if err != nil {
+		panic(err)
+	}
+	//fmt.Println(string(b))
+	return rateresp
+
 }
 
 func CopyRoutineStp2Tbl(i int, s ratingtables.RateRoutinSteps) {
@@ -182,47 +213,200 @@ func GetStpRatingVarValue(stpidx int, vehidx int) {
 func LookupRatVarValue(stpidx int, vehidx int, RateVarCode string) string {
 	var RateVarValue string
 	switch RateVarCode {
+
+	case "AffinityGroup":
+		RateVarValue = plcyvar.AffinityGroup
+	case "HouseholdCompostion":
+		RateVarValue = plcyvar.HouseholdCompostion
+	case "TermLength":
+		RateVarValue = strconv.Itoa(plcyvar.TermLength)
+	case "MultiPolicy":
+		RateVarValue = plcyvar.MultiPolicy
+	case "PermissiveUserOption":
+		RateVarValue = plcyvar.PermissiveUserOption
+
 	case "Zipcode":
 		RateVarValue = vehvar[vehidx].Zipcode
-	case "Points":
-		RateVarValue = strconv.Itoa(drvvar[0].Points)
-	case "AnnualMileage":
-		RateVarValue = vehvar[vehidx].AnnualMileage.String()
-	case "DrivingExpYears":
-		RateVarValue = drvvar[0].DrivingExpYears.String()
+	case "Mileage1":
+		RateVarValue = vehvar[vehidx].Mileage1.String()
+	case "Mileage2":
+		RateVarValue = vehvar[vehidx].Mileage2.String()
+	case "VehicleAge1":
+		RateVarValue = strconv.Itoa(vehvar[vehidx].VehicleAge1)
+	case "VehicleAge2":
+		RateVarValue = strconv.Itoa(vehvar[vehidx].VehicleAge2)
+	case "ModelYear":
+		RateVarValue = strconv.Itoa(vehvar[vehidx].ModelYear)
+	case "HighPerfInd":
+		RateVarValue = strings.ToUpper(strconv.FormatBool(vehvar[vehidx].HighPerfInd))
+	case "VehHistInd":
+		RateVarValue = strings.ToUpper(strconv.FormatBool(vehvar[vehidx].VehHistInd))
+	case "PassiveResType":
+		RateVarValue = vehvar[vehidx].PassiveResType
+	case "AntiLockInd":
+		RateVarValue = strings.ToUpper(strconv.FormatBool(vehvar[vehidx].AntiLockInd))
+	case "AntitheftInd":
+		RateVarValue = strings.ToUpper(strconv.FormatBool(vehvar[vehidx].AntitheftInd))
+	case "AltFuelInd":
+		RateVarValue = strings.ToUpper(strconv.FormatBool(vehvar[vehidx].AltFuelInd))
+	case "EscInd":
+		RateVarValue = strings.ToUpper(strconv.FormatBool(vehvar[vehidx].EscInd))
+	case "VehUseCode":
+		RateVarValue = vehvar[vehidx].VehUseCode
+	case "FrequencyBand":
+		RateVarValue = vehvar[vehidx].FrequencyBand
+	case "SeverityBand":
+		RateVarValue = vehvar[vehidx].SeverityBand
+	case "RideShareInd":
+		RateVarValue = strings.ToUpper(strconv.FormatBool(vehvar[vehidx].RideShareInd))
+	case "UMPDOption":
+		RateVarValue = "C2"
+		//strings.ToUpper(strconv.FormatBool(vehvar[vehidx].RideShareInd))
+
+	case "DPS":
+		RateVarValue = strconv.Itoa(drvvar[0].DPS)
+	case "DriverClass":
+		RateVarValue = strconv.Itoa(drvvar[0].DriverClass)
+	case "DriverClassCode":
+		RateVarValue = drvvar[0].DriverClassCode
+	case "YearsDrivingExperience":
+		RateVarValue = "All Other"
+		//drvvar[0].YearsDrivingExperience.String()
+	case "StudentAwayInd":
+		RateVarValue = strings.ToUpper(strconv.FormatBool(drvvar[0].StudentAwayInd))
 	case "MultiCarDisc":
-		RateVarValue = strconv.FormatBool(plcyvar.MultiCarDisc)
+		RateVarValue = strings.ToUpper(strconv.FormatBool(plcyvar.MultiCarDisc))
 	case "MatureDrvDisc":
-		RateVarValue = strconv.FormatBool(plcyvar.MatureDrvDisc)
+		RateVarValue = strings.ToUpper(strconv.FormatBool(plcyvar.MatureDrvDisc))
 	case "PersistencyDisc":
-		RateVarValue = strconv.FormatBool(plcyvar.PersistencyDisc)
-	case "GoodDriverDisc":
-		RateVarValue = strconv.FormatBool(drvvar[0].GoodDriverDisc)
+		RateVarValue = strings.ToUpper(strconv.FormatBool(plcyvar.PersistencyDisc))
+	case "GoodDriverDiscInd":
+		RateVarValue = strings.ToUpper(strconv.FormatBool(drvvar[0].GoodDriverDiscInd))
 	case "MaritalStatCode":
 		RateVarValue = drvvar[0].MaritalStatCode
-	case "PolicyTerm":
-		RateVarValue = strconv.Itoa(plcyvar.Policyterm)
-	case "LimitPerPerson":
+
+	case "Limit1":
 		for cvgidx := range vehvar[vehidx].CoverageRatingVars {
 			if vehvar[vehidx].CoverageRatingVars[cvgidx].CoverageCode == RateStepTbl[stpidx].CoverageCode {
-				RateVarValue = vehvar[vehidx].CoverageRatingVars[cvgidx].LimitPerPerson
+				RateVarValue = vehvar[vehidx].CoverageRatingVars[cvgidx].Limit1
 			}
 		}
-	case "LimitPerOccurrence":
+	case "Limit2":
 		for cvgidx := range vehvar[vehidx].CoverageRatingVars {
 			if vehvar[vehidx].CoverageRatingVars[cvgidx].CoverageCode == RateStepTbl[stpidx].CoverageCode {
-				RateVarValue = vehvar[vehidx].CoverageRatingVars[cvgidx].LimitPerOccurrence
+				RateVarValue = vehvar[vehidx].CoverageRatingVars[cvgidx].Limit2
+			}
+		}
+	case "Symbol":
+		for cvgidx := range vehvar[vehidx].CoverageRatingVars {
+			if vehvar[vehidx].CoverageRatingVars[cvgidx].CoverageCode == RateStepTbl[stpidx].CoverageCode {
+				RateVarValue = vehvar[vehidx].CoverageRatingVars[cvgidx].CvgSymbol
+			}
+		}
+	case "Symbol1":
+		for cvgidx := range vehvar[vehidx].CoverageRatingVars {
+			if vehvar[vehidx].CoverageRatingVars[cvgidx].CoverageCode == RateStepTbl[stpidx].CoverageCode {
+				RateVarValue = vehvar[vehidx].CoverageRatingVars[cvgidx].CvgSymbol
 			}
 
 		}
-	case "Deductible":
+	case "Symbol2":
 		for cvgidx := range vehvar[vehidx].CoverageRatingVars {
 			if vehvar[vehidx].CoverageRatingVars[cvgidx].CoverageCode == RateStepTbl[stpidx].CoverageCode {
-				RateVarValue = vehvar[vehidx].CoverageRatingVars[cvgidx].Deductible
+				RateVarValue = vehvar[vehidx].CoverageRatingVars[cvgidx].CvgSymbol
+			}
+
+		}
+	case "Deductible1":
+		for cvgidx := range vehvar[vehidx].CoverageRatingVars {
+			if vehvar[vehidx].CoverageRatingVars[cvgidx].CoverageCode == RateStepTbl[stpidx].CoverageCode {
+				RateVarValue = vehvar[vehidx].CoverageRatingVars[cvgidx].Deductible1
+			}
+
+		}
+	case "Deductible2":
+		for cvgidx := range vehvar[vehidx].CoverageRatingVars {
+			if vehvar[vehidx].CoverageRatingVars[cvgidx].CoverageCode == RateStepTbl[stpidx].CoverageCode {
+				RateVarValue = vehvar[vehidx].CoverageRatingVars[cvgidx].Deductible2
 			}
 
 		}
 
 	}
 	return RateVarValue
+}
+
+func Generateworksheet(RateStepTbl []RateStep) {
+
+	dir, err := ioutil.ReadDir("download")
+	if err != nil {
+		fmt.Println(err)
+	}
+	for _, d := range dir {
+		os.RemoveAll(path.Join([]string{"download", d.Name()}...))
+	}
+
+	file, _ := json.MarshalIndent(RateStepTbl, "", " ")
+	_ = ioutil.WriteFile("download/output.json", file, 0644)
+
+	data, err := ioutil.ReadFile("download/output.json")
+	if err != nil {
+		fmt.Println(err)
+	}
+	// Unmarshal JSON data
+	var d []RateStep
+	err = json.Unmarshal([]byte(data), &d)
+	if err != nil {
+		fmt.Println(err)
+	}
+	// Create a csv file
+	f, err := os.Create("download/output.csv")
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer f.Close()
+	// Write Unmarshaled json data to CSV file
+	w := csv.NewWriter(f)
+	for _, obj := range d {
+		var record []string
+		record = append(
+			record,
+			obj.RoutineId,
+			obj.CoverageCode,
+			strconv.Itoa(obj.StepNo),
+			strconv.Itoa(obj.RefStepNo),
+			obj.RatingItemCode,
+			obj.RatingItemGrpCode,
+			obj.StepOperation,
+			obj.StepCalcMethod,
+			obj.StepSplMethod,
+			obj.CvgCodetoGetFctr,
+			obj.RateVar1Code,
+			obj.RateVar1Value,
+			obj.RateVar2Code,
+			obj.RateVar2Value,
+			obj.RateVar3Code,
+			obj.RateVar3Value,
+			obj.RateVar4Code,
+			obj.RateVar4Value,
+			obj.RateVar5Code,
+			obj.RateVar5Value,
+			obj.RateVar6Code,
+			obj.RateVar6Value,
+			obj.RateVar7Code,
+			obj.RateVar7Value,
+			obj.RateVar8Code,
+			obj.RateVar8Value,
+			fmt.Sprintf("%f", obj.DefaultValue),
+			obj.RoundorTrunc,
+			strconv.Itoa(obj.RoundorTruncDigits),
+			fmt.Sprintf("%f", obj.RateFactor),
+			fmt.Sprintf("%f", obj.StepResult),
+			obj.RateEffDate.String(),
+			obj.RatebookActivationDate.String(),
+			obj.RateActivationDate.String())
+		w.Write(record)
+	}
+	w.Flush()
+
 }

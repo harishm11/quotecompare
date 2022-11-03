@@ -10,13 +10,8 @@ import (
 type PolicyRatingVars struct {
 	QuoteEffDt             time.Time
 	QuoteAppliedDt         time.Time
-	AutoHomeDisc           bool
-	AutoHomeLifeDisc       bool
-	AutoLifeDisc           bool
-	AutoRenterDisc         bool
-	AutoRenterLifeDisc     bool
-	AutoCeaDisc            bool
-	Policyterm             int
+	MultiPolicy            string
+	TermLength             int
 	TotalVehicles          int
 	TotalDrivers           int
 	MultiCarDisc           bool
@@ -25,43 +20,57 @@ type PolicyRatingVars struct {
 	RatebookCode           string
 	RatebookActivationDate time.Time
 	PlcyPremium            float32
+	HouseholdCompostion    string
+	PermissiveUserOption   string
+	AffinityGroup          string
 }
 
 type DriverRatingVars struct {
-	DriverId        uint
-	DrivingExpYears json.Number
-	MaritalStatCode string
-	GoodStdDisc     bool
-	SeniorDefDisc   bool
-	DriverTrainDisc bool
-	GoodDriverDisc  bool
-	Points          int
+	DriverId               uint
+	YearsDrivingExperience json.Number
+	MaritalStatCode        string
+	GoodStdDisc            bool
+	SeniorDefDisc          bool
+	DriverTrainDisc        bool
+	GoodDriverDiscInd      bool
+	DPS                    int
+	DriverClass            int
+	DriverClassCode        string
+	StudentAwayInd         bool
 }
 
 type VehicleRatingVars struct {
 	VehicleId          uint
-	AnnualMileage      json.Number
+	Mileage1           json.Number
+	Mileage2           json.Number
 	AltFuelInd         bool
-	AntiLockBrakeDisc  bool
-	AntiTheftDisc      bool
-	PassiveRestDisc    bool
-	ESCDisc            bool
-	VehicleUsage       string
-	VehicleAge         int
+	AntiLockInd        bool
+	AntitheftInd       bool
+	PassiveResType     string
+	EscInd             bool
+	HighPerfInd        bool
+	VehHistInd         bool
+	VehUseCode         string
+	VehicleAge1        int
+	VehicleAge2        int
 	Zipcode            string
-	Modelyear          int
+	ModelYear          int
 	Symbol             int
 	VehPremium         float32
+	FrequencyBand      string
+	SeverityBand       string
+	RideShareInd       bool
 	CoverageRatingVars []CoverageRatingVars
 }
 
 type CoverageRatingVars struct {
-	CoverageCode       string
-	CvgSymbol          string
-	LimitPerPerson     string
-	LimitPerOccurrence string
-	Deductible         string
-	CvgPremium         float32
+	CoverageCode string
+	CvgSymbol    string
+	Limit1       string
+	Limit2       string
+	Deductible1  string
+	Deductible2  string
+	CvgPremium   float32
 }
 
 func PopPolicyRatingVars(q *models.Quote) PolicyRatingVars {
@@ -75,14 +84,12 @@ func PopPolicyRatingVars(q *models.Quote) PolicyRatingVars {
 		policyRatingVars.MultiCarDisc = true
 	}
 	policyRatingVars.MatureDrvDisc = false
-	policyRatingVars.AutoHomeDisc = false
-	policyRatingVars.AutoHomeLifeDisc = false
-	policyRatingVars.AutoLifeDisc = false
-	policyRatingVars.AutoRenterDisc = false
-	policyRatingVars.AutoRenterLifeDisc = false
-	policyRatingVars.AutoCeaDisc = false
+	policyRatingVars.MultiPolicy = "Auto-Life"
 	policyRatingVars.PersistencyDisc = false
-	policyRatingVars.Policyterm = q.Policyterm
+	policyRatingVars.TermLength = q.Policyterm
+	policyRatingVars.HouseholdCompostion = "DV-11"
+	policyRatingVars.PermissiveUserOption = "Full"
+	policyRatingVars.AffinityGroup = "Group I"
 
 	return policyRatingVars
 }
@@ -93,11 +100,15 @@ func PopDriverRatingVars(d []models.Driver) []DriverRatingVars {
 	for index, drv := range d {
 		driverRatingVars[index].DriverId = drv.ID
 		driverRatingVars[index].GoodStdDisc = false
-		driverRatingVars[index].GoodDriverDisc = true
+		driverRatingVars[index].GoodDriverDiscInd = true
 		driverRatingVars[index].DriverTrainDisc = false
 		driverRatingVars[index].SeniorDefDisc = false
 		driverRatingVars[index].MaritalStatCode = drv.MaritalStatCode
-		driverRatingVars[index].DrivingExpYears = drv.Experience
+		driverRatingVars[index].YearsDrivingExperience = drv.Experience
+		driverRatingVars[index].DriverClass = 1
+		driverRatingVars[index].DriverClassCode = "0FMN"
+		driverRatingVars[index].StudentAwayInd = false
+		driverRatingVars[index].DPS = 0
 	}
 	return driverRatingVars
 }
@@ -107,22 +118,29 @@ func PopVehicleRatingVars(v []models.Vehicle) []VehicleRatingVars {
 
 	for index, veh := range v {
 		vehicleRatingVars[index].VehicleId = veh.ID
-		vehicleRatingVars[index].AnnualMileage = veh.AnnualMileage
-		vehicleRatingVars[index].AntiLockBrakeDisc = false
-		vehicleRatingVars[index].AntiTheftDisc = false
-		vehicleRatingVars[index].PassiveRestDisc = false
-		vehicleRatingVars[index].PassiveRestDisc = false
-		vehicleRatingVars[index].ESCDisc = false
+		vehicleRatingVars[index].Mileage1 = veh.AnnualMileage
+		vehicleRatingVars[index].Mileage2 = veh.AnnualMileage
+		vehicleRatingVars[index].AntiLockInd = false
+		vehicleRatingVars[index].AntitheftInd = false
+		vehicleRatingVars[index].PassiveResType = "BELTS"
+		vehicleRatingVars[index].EscInd = false
+		vehicleRatingVars[index].HighPerfInd = false
+		vehicleRatingVars[index].VehHistInd = false
 		var err error
 		var value int64
 		value, err = veh.VehYear.Int64()
 		if err != nil {
-			vehicleRatingVars[index].VehicleAge = time.Now().Year() - int(value)
+			vehicleRatingVars[index].VehicleAge1 = time.Now().Year() - int(value)
+			vehicleRatingVars[index].VehicleAge2 = vehicleRatingVars[index].VehicleAge1
 		}
-		vehicleRatingVars[index].Modelyear = int(value)
-		vehicleRatingVars[index].VehicleUsage = veh.VehicleUsage
+		vehicleRatingVars[index].ModelYear = int(value)
+		vehicleRatingVars[index].VehUseCode = "Business"
+		//veh.VehicleUsage
 		vehicleRatingVars[index].Symbol = 1
 		vehicleRatingVars[index].Zipcode = veh.GrgZip
+		vehicleRatingVars[index].FrequencyBand = "1"
+		vehicleRatingVars[index].SeverityBand = "2"
+		vehicleRatingVars[index].RideShareInd = false
 		vehicleRatingVars[index].CoverageRatingVars = PopCvgRatingVars(veh.Coverages)
 
 	}
@@ -134,9 +152,10 @@ func PopCvgRatingVars(c []models.Coverage) []CoverageRatingVars {
 	for index, cvg := range c {
 		coverageRatingVars[index].CoverageCode = cvg.CoverageCode
 		coverageRatingVars[index].CvgSymbol = cvg.CvgSymbol
-		coverageRatingVars[index].LimitPerPerson = cvg.LimitPerPerson
-		coverageRatingVars[index].LimitPerOccurrence = cvg.LimitPerOccurrence
-		coverageRatingVars[index].Deductible = cvg.Deductible
+		coverageRatingVars[index].Limit1 = cvg.LimitPerPerson
+		coverageRatingVars[index].Limit2 = cvg.LimitPerOccurrence
+		coverageRatingVars[index].Deductible1 = cvg.Deductible
+		coverageRatingVars[index].Deductible2 = ""
 		coverageRatingVars[index].CvgPremium = cvg.CvgPremium
 	}
 	return coverageRatingVars
