@@ -115,7 +115,6 @@ func PopDriverRatingVars(d []models.Driver) []DriverRatingVars {
 
 func PopVehicleRatingVars(v []models.Vehicle) []VehicleRatingVars {
 	var vehicleRatingVars = make([]VehicleRatingVars, len(v))
-
 	for index, veh := range v {
 		vehicleRatingVars[index].VehicleId = veh.ID
 		vehicleRatingVars[index].Mileage1 = veh.AnnualMileage
@@ -149,6 +148,7 @@ func PopVehicleRatingVars(v []models.Vehicle) []VehicleRatingVars {
 
 func PopCvgRatingVars(c []models.Coverage) []CoverageRatingVars {
 	var coverageRatingVars = make([]CoverageRatingVars, len(c))
+
 	for index, cvg := range c {
 		coverageRatingVars[index].CoverageCode = cvg.CoverageCode
 		coverageRatingVars[index].CvgSymbol = cvg.CvgSymbol

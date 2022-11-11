@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 	"path"
 	"strconv"
@@ -136,14 +137,15 @@ func ProcessRoutinesteps(pv ratingvariables.PolicyRatingVars, dv []ratingvariabl
 	rateresp.Amount = plcyvar.PlcyPremium
 
 	//Write the steps of calculation to worksheet
+	log.Println("Writing the steps of calculation to worksheet")
 	Generateworksheet(RateStepTbl)
 
 	//prepare rate repsonse to pass back
 	_, err := json.Marshal(rateresp)
 	if err != nil {
+		log.Println(err)
 		panic(err)
 	}
-	//fmt.Println(string(b))
 	return rateresp
 
 }
@@ -340,7 +342,7 @@ func Generateworksheet(RateStepTbl []RateStep) {
 
 	dir, err := ioutil.ReadDir("download")
 	if err != nil {
-		fmt.Println(err)
+		log.Println(err)
 	}
 	for _, d := range dir {
 		os.RemoveAll(path.Join([]string{"download", d.Name()}...))
@@ -351,18 +353,18 @@ func Generateworksheet(RateStepTbl []RateStep) {
 
 	data, err := ioutil.ReadFile("download/output.json")
 	if err != nil {
-		fmt.Println(err)
+		log.Println(err)
 	}
 	// Unmarshal JSON data
 	var d []RateStep
 	err = json.Unmarshal([]byte(data), &d)
 	if err != nil {
-		fmt.Println(err)
+		log.Println(err)
 	}
 	// Create a csv file
 	f, err := os.Create("download/output.csv")
 	if err != nil {
-		fmt.Println(err)
+		log.Println(err)
 	}
 	defer f.Close()
 	// Write Unmarshaled json data to CSV file

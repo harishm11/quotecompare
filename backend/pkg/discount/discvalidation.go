@@ -2,6 +2,7 @@ package discount
 
 import (
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
@@ -29,5 +30,6 @@ func Discount(c *fiber.Ctx) error {
 }
 
 func InvokeDiscRules(quote *models.Quote) string {
+	log.Println("unimplemented")
 	panic("unimplemented")
 }
