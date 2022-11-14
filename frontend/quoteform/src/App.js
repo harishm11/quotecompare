@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import React from 'react';
-// import DatePicker from "react-datepicker";
 import './App.css';
 
 function App() {
@@ -19,18 +17,6 @@ function App() {
   const effDate = new Date(quoteformFields[0].effDate)
   const policyterm = 6
 
-  
-
-  const [driverformFields, setdriverformFields] = useState([
-    { name: '', age: 0 ,experience:0, course: '',incidentdate:'', incidenttype:'',maritalstatcode:''
-    ,licissuedt:new Date(),goodstudent:'',dateofbirth:new Date(),drveraddeddt:new Date(),occupation:'',pniind:'',relationtopni:''},
-  ])
-  
-  const [vehicleformFields, setvehicleformFields] = useState([
-    { vehyear:2001, vehmake: '' ,vehmodel: '', annualMileage: 10000,grgZip:'',vehicleusage:''},
-  ])
-
-  
   const handleQuoteFormChange = (event, index) => {
     let data = [...quoteformFields];
     data[index][event.target.name] = event.target.value;
@@ -38,40 +24,17 @@ function App() {
     
   }
 
-  const handleDriverFormChange = (event, index) => {
+  const [driverformFields, setdriverformFields] = useState([
+    { name: '', age: 0 ,experience:0, course: '',incidentdate:'', incidenttype:'',maritalstatcode:''
+    ,licissuedt:new Date(),goodstudent:'',dateofbirth:new Date(),drveraddeddt:new Date(),occupation:'',pniind:'',relationtopni:''},
+  ])
+
+const handleDriverFormChange = (event, index) => {
     let data = [...driverformFields];
     data[index][event.target.name] = event.target.value;
     setdriverformFields(data);
   }
 
-  const handleVehcileFormChange = (event, index) => {
-    let data = [...vehicleformFields];
-    data[index][event.target.name] = event.target.value;
-    setvehicleformFields(data);
-  }
-  const handleSubmit = event => {
-    event.preventDefault();
-    console.log("from submit")
-    console.log(new Date().toISOString())
-    const url = 'http://localhost:8000/quoteApi/rating'
-    const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({quotenumber,effDate,policyterm, driverformFields,vehicleformFields})
-    };
-    console.log(requestOptions.body)
-    fetch(url, requestOptions)
-        .then(response =>response.json())
-        //.then(data => console.log(data) )
-        //.then(data => alert("premium = " + data))
-        .then(console.log("After response"))
-        .then(data => console.log(data))
-        //.then(window.location.reload(true))
-        .then(console.log(new Date().toISOString()))
-        .catch(error => console.log('Form submit error', error))
-
-  };
-  
   const addDriverFields = () => {
     let object = {
       name: '', age: 0 ,experience:0, course: '',incidentdate:'', incidenttype:'',maritalstatcode:''
@@ -79,11 +42,21 @@ function App() {
     }
     setdriverformFields([...driverformFields, object])
   }
-
+  
   const removeDriverFields = (index) => {
     let data = [...driverformFields];
     data.splice(index, 1)
     setdriverformFields(data)
+  }
+
+  const [vehicleformFields, setvehicleformFields] = useState([
+    { vehyear:2001, vehmake: '' ,vehmodel: '', annualMileage: 10000,grgZip:'',vehicleusage:''},
+  ])
+
+  const handleVehcileFormChange = (event, index) => {
+    let data = [...vehicleformFields];
+    data[index][event.target.name] = event.target.value;
+    setvehicleformFields(data);
   }
 
   const addVehicleFields = () => {
@@ -98,6 +71,27 @@ function App() {
     data.splice(index, 1)
     setvehicleformFields(data)
   }
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    console.log("from submit")
+    console.log(new Date().toISOString())
+    const url = 'http://localhost:8000/quoteApi/rating'
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({quotenumber,effDate,policyterm, driverformFields,vehicleformFields})
+    };
+    console.log(requestOptions.body)
+    fetch(url, requestOptions)
+        .then(response =>response.json())
+        .then(console.log("After response"))
+        .then(data => console.log(data))
+        .then(console.log(new Date().toISOString()))
+        .catch(error => console.log('Form submit error', error))
+  };
+ 
+  
   return (
     <div className="App">
       {quoteformFields.map((form,index) => {
@@ -138,107 +132,104 @@ function App() {
           )
         })}
         <div>
-                <h1>Drivers</h1>
+          <h1>Drivers</h1>
         </div>
         {driverformFields.map((form, index) => {
-          return (
-            
-            <div key={index}>
-              
-              <input
-                name='name'
-                placeholder='Name'
-                onChange={event => handleDriverFormChange(event, index)}
-                value={form.name}
-              />
-              <input
-                type='number'
-                min = '15'
-                name='age'
-                placeholder='Age'
-                onChange={event => handleDriverFormChange(event, index)}
-                value={form.age}
-              />
-              <input
-                type='number'
-                name='experience'
-                placeholder='Experience'
-                onChange={event => handleDriverFormChange(event, index)}
-                value={form.experience}
-              />
-              <input
-                name='course'
-                placeholder='Course'
-                onChange={event => handleDriverFormChange(event, index)}
-                value={form.course}
-              />
-              <input
-                name='incidentdate'
-                placeholder='Incident Date'
-                onChange={event => handleDriverFormChange(event, index)}
-                value={form.incidentdate}
-              />
-              <input
-                name='incidenttype'
-                placeholder='Incident Type'
-                onChange={event => handleDriverFormChange(event, index)}
-                value={form.incidenttype}
-              />
-              <input
-                name='maritalstatcode'
-                placeholder='Marital status code'
-                onChange={event => handleDriverFormChange(event, index)}
-                value={form.maritalstatcode}
-              />
-              <input
-                name='licissuedt'
-                placeholder='License Issue Date'
-                onChange={event => handleDriverFormChange(event, index)}
-                value={form.licissuedt}
-              />
-              <input
-                name='goodstudent'
-                placeholder='Good Student Indicator'
-                onChange={event => handleDriverFormChange(event, index)}
-                value={form.goodstudent}
-              />
-              <input
-                name='dateofbirth'
-                placeholder='Date of Birth'
-                onChange={event => handleDriverFormChange(event, index)}
-                value={form.dateofbirth}
-              />
-              <input
-                name='drveraddeddt'
-                placeholder='Driver Added Date'
-                onChange={event => handleDriverFormChange(event, index)}
-                value={form.drveraddeddt}
-              />
-              <input
-                name='occupation'
-                placeholder='Occupation'
-                onChange={event => handleDriverFormChange(event, index)}
-                value={form.occupation}
-              />
-              <input
-                name='pniind'
-                placeholder='PNI Indicator'
-                onChange={event => handleDriverFormChange(event, index)}
-                value={form.pniind}
-              />
-              <input
-                name='relationtopni'
-                placeholder='Relationship to PNI'
-                onChange={event => handleDriverFormChange(event, index)}
-                value={form.relationtopni}
-              />
-              <button onClick={addDriverFields}>Add</button>
-              <button onClick={() => removeDriverFields(index)}>Remove</button>
-            </div>
-          )
-        })}
-
-
+        return (
+          <div key={index}>
+            <input
+            name='name'
+            placeholder='Name'
+            onChange={event => handleDriverFormChange(event, index)}
+            value={form.name}
+                />
+                <input
+                    type='number'
+                    min = '15'
+                    name='age'
+                    placeholder='Age'
+                    onChange={event => handleDriverFormChange(event, index)}
+                    value={form.age}
+                />
+                <input
+                    type='number'
+                    name='experience'
+                    placeholder='Experience'
+                    onChange={event => handleDriverFormChange(event, index)}
+                    value={form.experience}
+                />
+                <input
+                    name='course'
+                    placeholder='Course'
+                    onChange={event => handleDriverFormChange(event, index)}
+                    value={form.course}
+                />
+                <input
+                    name='incidentdate'
+                    placeholder='Incident Date'
+                    onChange={event => handleDriverFormChange(event, index)}
+                    value={form.incidentdate}
+                />
+                <input
+                    name='incidenttype'
+                    placeholder='Incident Type'
+                    onChange={event => handleDriverFormChange(event, index)}
+                    value={form.incidenttype}
+                />
+                <input
+                    name='maritalstatcode'
+                    placeholder='Marital status code'
+                    onChange={event => handleDriverFormChange(event, index)}
+                    value={form.maritalstatcode}
+                />
+                <input
+                    name='licissuedt'
+                    placeholder='License Issue Date'
+                    onChange={event => handleDriverFormChange(event, index)}
+                    value={form.licissuedt}
+                />
+                <input
+                    name='goodstudent'
+                    placeholder='Good Student Indicator'
+                    onChange={event => handleDriverFormChange(event, index)}
+                    value={form.goodstudent}
+                />
+                <input
+                    name='dateofbirth'
+                    placeholder='Date of Birth'
+                    onChange={event => handleDriverFormChange(event, index)}
+                    value={form.dateofbirth}
+                />
+                <input
+                    name='drveraddeddt'
+                    placeholder='Driver Added Date'
+                    onChange={event => handleDriverFormChange(event, index)}
+                    value={form.drveraddeddt}
+                />
+                <input
+                    name='occupation'
+                    placeholder='Occupation'
+                    onChange={event => handleDriverFormChange(event, index)}
+                    value={form.occupation}
+                />
+                <input
+                    name='pniind'
+                    placeholder='PNI Indicator'
+                    onChange={event => handleDriverFormChange(event, index)}
+                    value={form.pniind}
+                />
+                <input
+                    name='relationtopni'
+                    placeholder='Relationship to PNI'
+                    onChange={event => handleDriverFormChange(event, index)}
+                    value={form.relationtopni}
+                />
+                <button onClick={addDriverFields}>Add</button>
+                <button onClick={() => removeDriverFields(index)}>Remove</button>  
+          </div>
+        )
+      })}
+        
         <div>
                 <h1>Vehicles</h1>
         </div>
