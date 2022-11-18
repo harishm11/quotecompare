@@ -3,7 +3,7 @@ import "../App.css";
 import Driverform from "../components/Driverform";
 import Quoteform from "../components/Quoteform";
 import Vehicleform from "../components/Vehicleform";
-import ShowResults from "./ShowResults";
+import { useNavigate } from "react-router-dom";
 
 function CreateQuote() {
   const [driverformFields, setdriverformFields] = useState();
@@ -20,8 +20,6 @@ function CreateQuote() {
   const [showDriver, setshowDriver] = useState(false);
   const [showVehicle, setshowVehicle] = useState(false);
 
-  const [respdata, setrespdata] = useState();
-
   const getvehicleData = (vehicleData) => {
     setvehicleformFields(vehicleData);
   };
@@ -29,6 +27,8 @@ function CreateQuote() {
   const getquoteData = (quoteData) => {
     setquoteformFields(quoteData);
   };
+
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("from submit");
@@ -47,8 +47,7 @@ function CreateQuote() {
     fetch(url, requestOptions)
       .then((response) => response.json())
       .then(console.log("After response"))
-      .then((data) => setrespdata(data))
-      .then(console.log(respdata))
+      .then((data) => navigate("/Results", { state: { data } }))
       .then(console.log(new Date().toISOString()))
       .catch((error) => console.log("Form submit error", error));
   };
@@ -116,7 +115,6 @@ function CreateQuote() {
           </button>
         )}
       </div>
-      <ShowResults respdata={respdata} />
     </div>
   );
 }

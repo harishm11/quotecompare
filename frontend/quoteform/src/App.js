@@ -7,12 +7,14 @@ export default function App() {
     
     <Router>
       <div className="App">
-        <div className="navbar navbar-expand-lg navbar-light bg-light">
-          <div className="logo">QuoteCompare</div>
+        <div className="navbar navbar-expand-lg navbar-dark bg-dark">
+          
            <ul className="navbar-nav mr-sm-2">
               <Link className="nav-link" to="/">Home</Link>
               <Link className="nav-link" to="/Quote">Quote</Link>
+              
            </ul>
+        <div className="logo">QuoteCompare</div>
         </div>
         <Routes>
             <Route path="/" element={App} />

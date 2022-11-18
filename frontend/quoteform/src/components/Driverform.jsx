@@ -63,6 +63,7 @@ export default function Driverform(props) {
           {driverformFields.map((form, index) => {
             return (
               <div key={index}>
+                <label>Name</label>
                 <input
                   className="form-control"
                   name="name"
@@ -70,6 +71,7 @@ export default function Driverform(props) {
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.name}
                 />
+                {/* <label>Age</label>
                 <input
                   className="form-control"
                   type="number"
@@ -78,7 +80,8 @@ export default function Driverform(props) {
                   placeholder="Age"
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.age}
-                />
+                /> */}
+                <label>Driving Experience</label>
                 <input
                   className="form-control"
                   type="number"
@@ -87,6 +90,7 @@ export default function Driverform(props) {
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.experience}
                 />
+                <label>Driving Course</label>
                 <input
                   className="form-control"
                   name="course"
@@ -94,6 +98,7 @@ export default function Driverform(props) {
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.course}
                 />
+                <label>Inident Date</label>
                 <input
                   className="form-control"
                   name="incidentdate"
@@ -101,6 +106,7 @@ export default function Driverform(props) {
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.incidentdate}
                 />
+                <label>Incident Type</label>
                 <input
                   className="form-control"
                   name="incidenttype"
@@ -108,6 +114,7 @@ export default function Driverform(props) {
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.incidenttype}
                 />
+                <label>Marital status</label>
                 <input
                   className="form-control"
                   name="maritalstatcode"
@@ -115,6 +122,7 @@ export default function Driverform(props) {
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.maritalstatcode}
                 />
+                <label>License Issue Date</label>
                 <input
                   className="form-control"
                   name="licissuedt"
@@ -122,6 +130,7 @@ export default function Driverform(props) {
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.licissuedt}
                 />
+                <label>Good Student?</label>
                 <input
                   className="form-control"
                   name="goodstudent"
@@ -129,20 +138,23 @@ export default function Driverform(props) {
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.goodstudent}
                 />
+                <label>Date of Birth</label>
                 <input
                   className="form-control"
                   name="dateofbirth"
                   placeholder="Date of Birth"
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.dateofbirth}
-                />{" "}
+                />
+                {/* <label>Driver Added Date</label>
                 <input
                   className="form-control"
                   name="drveraddeddt"
                   placeholder="Driver Added Date"
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.drveraddeddt}
-                />
+                /> */}
+                <label>Occupation</label>
                 <input
                   className="form-control"
                   name="occupation"
@@ -150,6 +162,7 @@ export default function Driverform(props) {
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.occupation}
                 />
+                <label>PNI?</label>
                 <input
                   className="form-control"
                   name="pniind"
@@ -157,6 +170,7 @@ export default function Driverform(props) {
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.pniind}
                 />
+                <label>Relationship to PNI</label>
                 <input
                   className="form-control"
                   name="relationtopni"
