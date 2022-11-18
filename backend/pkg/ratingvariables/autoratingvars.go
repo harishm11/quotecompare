@@ -11,7 +11,7 @@ type PolicyRatingVars struct {
 	QuoteEffDt             time.Time
 	QuoteAppliedDt         time.Time
 	MultiPolicy            string
-	TermLength             int
+	TermLength             json.Number
 	TotalVehicles          int
 	TotalDrivers           int
 	MultiCarDisc           bool
@@ -76,7 +76,7 @@ type CoverageRatingVars struct {
 func PopPolicyRatingVars(q *models.Quote) PolicyRatingVars {
 
 	var policyRatingVars PolicyRatingVars
-	policyRatingVars.QuoteEffDt = q.QuoteEffDate
+	policyRatingVars.QuoteEffDt = q.Quotes.QuoteEffDate
 	policyRatingVars.QuoteAppliedDt = q.RateAppliedDate
 	policyRatingVars.TotalVehicles = len(q.Vehicles)
 	policyRatingVars.TotalDrivers = len(q.Drivers)
@@ -86,7 +86,7 @@ func PopPolicyRatingVars(q *models.Quote) PolicyRatingVars {
 	policyRatingVars.MatureDrvDisc = false
 	policyRatingVars.MultiPolicy = "Auto-Life"
 	policyRatingVars.PersistencyDisc = false
-	policyRatingVars.TermLength = q.Policyterm
+	policyRatingVars.TermLength = q.Quotes.Policyterm
 	policyRatingVars.HouseholdCompostion = "DV-11"
 	policyRatingVars.PermissiveUserOption = "Full"
 	policyRatingVars.AffinityGroup = "Group I"

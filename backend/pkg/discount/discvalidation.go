@@ -19,7 +19,8 @@ func Discount(c *fiber.Ctx) error {
 	if err := c.BodyParser(quote); err != nil {
 		panic(err)
 	}
-	quote.RateTermStartDate = quote.QuoteEffDate
+
+	quote.RateTermStartDate = quote.Quotes.QuoteEffDate
 	quote.RateAppliedDate = time.Now()
 	quote.QuoteStartDate = time.Now()
 	//Populate Good Coverages

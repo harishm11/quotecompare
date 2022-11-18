@@ -3,3 +3,5 @@ backend/main/__debug_bin
 backend/.DS_Store
 backend/main/download/output.csv
 backend/main/download/output.json
+backend/main/download/output.json
+.gitignore

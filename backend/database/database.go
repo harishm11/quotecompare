@@ -27,6 +27,7 @@ func InitDatabase() {
 
 	//Policy Tables
 	DBConn.AutoMigrate(&models.Quote{})
+	DBConn.AutoMigrate(&models.Qte{})
 	DBConn.AutoMigrate(&models.Driver{})
 	DBConn.AutoMigrate(&models.Vehicle{})
 	DBConn.AutoMigrate(&models.Coverage{})
@@ -41,11 +42,8 @@ func InitDatabase() {
 	DBConn.AutoMigrate(&systemtables.States{})
 	DBConn.AutoMigrate(&systemtables.CompanyNAIC{})
 
-
 	//Rule tables
 	DBConn.AutoMigrate(&ruletables.DiscountRules{})
-
-
 
 	if err != nil {
 		panic("Automigrate to database Failed")

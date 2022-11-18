@@ -42,7 +42,9 @@ func NewQuote(c *fiber.Ctx) error {
 		log.Println(err)
 		panic(err)
 	}
-	quote.RateTermStartDate = quote.QuoteEffDate
+
+	
+	quote.RateTermStartDate = quote.Quotes.QuoteEffDate
 	quote.RateAppliedDate = time.Now()
 	quote.QuoteStartDate = time.Now()
 

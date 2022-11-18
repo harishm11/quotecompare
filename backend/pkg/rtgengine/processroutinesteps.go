@@ -221,7 +221,7 @@ func LookupRatVarValue(stpidx int, vehidx int, RateVarCode string) string {
 	case "HouseholdCompostion":
 		RateVarValue = plcyvar.HouseholdCompostion
 	case "TermLength":
-		RateVarValue = strconv.Itoa(plcyvar.TermLength)
+		RateVarValue = plcyvar.TermLength.String()
 	case "MultiPolicy":
 		RateVarValue = plcyvar.MultiPolicy
 	case "PermissiveUserOption":

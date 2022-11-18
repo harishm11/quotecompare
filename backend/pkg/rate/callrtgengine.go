@@ -22,8 +22,8 @@ func Rate(c *fiber.Ctx) error {
 		log.Println(err)
 		panic(err)
 	}
-	log.Println("Quote ", quote.QuoteNumber, "sumitted")
-	quote.RateTermStartDate = quote.QuoteEffDate
+
+	quote.RateTermStartDate = quote.Quotes.QuoteEffDate
 	quote.RateAppliedDate = time.Now()
 	quote.QuoteStartDate = time.Now()
 	//Populate Good Coverages
@@ -65,6 +65,7 @@ func InvokeRtgEngine(quote *models.Quote) *contracts.RateResponse {
 	log.Println("Preparing Driver level Rating Variables")
 	drvratvars := ratingvariables.PopDriverRatingVars(quote.Drivers)
 
+	log.Println("Calling Rating Engine")
 	//call rating engine passing derived rating variables
 	rateresp = rtgengine.RatingEngineImpl(plcyratvars, drvratvars, vehratvars)
 
