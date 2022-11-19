@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import React from "react";
 export default function Driverform(props) {
   const [driverformFields, setdriverformFields] = useState([
     {
@@ -67,7 +67,6 @@ export default function Driverform(props) {
                 <input
                   className="form-control"
                   name="name"
-                  placeholder="Name"
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.name}
                 />
@@ -86,7 +85,6 @@ export default function Driverform(props) {
                   className="form-control"
                   type="number"
                   name="experience"
-                  placeholder="Experience"
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.experience}
                 />
@@ -94,7 +92,6 @@ export default function Driverform(props) {
                 <input
                   className="form-control"
                   name="course"
-                  placeholder="Course"
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.course}
                 />
@@ -102,7 +99,6 @@ export default function Driverform(props) {
                 <input
                   className="form-control"
                   name="incidentdate"
-                  placeholder="Incident Date"
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.incidentdate}
                 />
@@ -110,7 +106,6 @@ export default function Driverform(props) {
                 <input
                   className="form-control"
                   name="incidenttype"
-                  placeholder="Incident Type"
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.incidenttype}
                 />
@@ -118,7 +113,6 @@ export default function Driverform(props) {
                 <input
                   className="form-control"
                   name="maritalstatcode"
-                  placeholder="Marital status code"
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.maritalstatcode}
                 />
@@ -126,7 +120,6 @@ export default function Driverform(props) {
                 <input
                   className="form-control"
                   name="licissuedt"
-                  placeholder="License Issue Date"
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.licissuedt}
                 />
@@ -142,7 +135,6 @@ export default function Driverform(props) {
                 <input
                   className="form-control"
                   name="dateofbirth"
-                  placeholder="Date of Birth"
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.dateofbirth}
                 />
@@ -158,7 +150,6 @@ export default function Driverform(props) {
                 <input
                   className="form-control"
                   name="occupation"
-                  placeholder="Occupation"
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.occupation}
                 />
@@ -174,7 +165,6 @@ export default function Driverform(props) {
                 <input
                   className="form-control"
                   name="relationtopni"
-                  placeholder="Relationship to PNI"
                   onChange={(event) => handleDriverFormChange(event, index)}
                   value={form.relationtopni}
                 />

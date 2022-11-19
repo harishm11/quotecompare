@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import React from "react";
 export default function Vehicleform(props) {
   const [vehicleformFields, setvehicleformFields] = useState([
     {
@@ -48,49 +48,49 @@ export default function Vehicleform(props) {
           {vehicleformFields.map((form, index) => {
             return (
               <div key={index}>
+                <label>Model Year</label>
                 <input
                   className="form-control"
                   type="number"
                   min="1901"
                   name="vehyear"
-                  placeholder="Year"
                   onChange={(event) => handleVehcileFormChange(event, index)}
                   value={form.year}
                 />
+                <label>Make</label>
                 <input
                   className="form-control"
                   name="vehmake"
-                  placeholder="Make"
                   onChange={(event) => handleVehcileFormChange(event, index)}
                   value={form.make}
                 />
+                <label>Model</label>
                 <input
                   className="form-control"
                   name="vehmodel"
-                  placeholder="Model"
                   onChange={(event) => handleVehcileFormChange(event, index)}
                   value={form.model}
                 />
+                <label>Annual Mileage</label>
                 <input
                   className="form-control"
                   type="number"
                   min="3000"
                   name="annualMileage"
-                  placeholder="Annual Mileage"
                   onChange={(event) => handleVehcileFormChange(event, index)}
                   value={form.annualMileage}
                 />
+                <label>Garaging Zip Code</label>
                 <input
                   className="form-control"
                   name="grgZip"
-                  placeholder="Garaging Zip Code"
                   onChange={(event) => handleVehcileFormChange(event, index)}
                   value={form.grgZip}
                 />
+                <label>Vehicle Usage</label>
                 <input
                   className="form-control"
                   name="vehicleusage"
-                  placeholder="Vehicle Usage"
                   onChange={(event) => handleVehcileFormChange(event, index)}
                   value={form.vehicleusage}
                 />

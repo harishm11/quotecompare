@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import React from "react";
 export default function Quoteform(props) {
   var [quoteformFields, setquoteformFields] = useState({
     quotenumber: Math.floor(Math.random() * 999999999),
@@ -25,26 +25,26 @@ export default function Quoteform(props) {
       <div className="card">
         <div className="card-body">
           <form>
+            <label>Quote Number</label>
             <input
               className="form-control"
               name="quotenumber"
-              placeholder="Quote Number"
               onChange={(event) => handleQuoteFormChange(event)}
               value={quoteformFields.quotenumber}
             />
+            <label>Effective Date</label>
             <input
               className="form-control"
               name="effDate"
-              placeholder="Effective Date"
               onChange={(event) => handleQuoteFormChange(event)}
               value={quoteformFields.effDate}
             />
+            <label>Policy term</label>
             <input
               className="form-control"
               type="number"
               min="6"
               name="policyterm"
-              placeholder="Policy term"
               onChange={(event) => handleQuoteFormChange(event)}
               value={quoteformFields.policyterm}
             />
