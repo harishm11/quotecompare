@@ -6,41 +6,48 @@ export default function ShowResults() {
   const location = useLocation();
   return (
     <>
-      <ul className="list-group">
-        <li className="list-group-item">
-          <h3>Policy Premium = {location.state.data.Amount}</h3>
-        </li>
-      </ul>
-      {/* <div>VehicleDetails = {location.state.data.VehDetails}</div> */}
-      <ul className="list-group">
-        {Object.entries(location.state.data.VehDetails).map(([key, veh], i) => (
-          <li className="list-group-item" key={i}>
-            <span className="input-label">
-              Vehicle-{i + 1} Premium: {veh.Amount}
-            </span>
-            <ul className="list-group">
-              {Object.entries(veh.CvgDetails).map(([key, cvg], i) => (
-                <li className="list-group-item" key={i}>
+      <div className="container">
+        <div className="form-group col-md-45">
+          <ul className="list-group">
+            <li className="list-group-item   ">
+              <h3>Policy Premium = {location.state.data.Amount}</h3>
+            </li>
+          </ul>
+
+          <ul className="list-group">
+            {Object.entries(location.state.data.VehDetails).map(
+              ([key, veh], i) => (
+                <li className="list-group-item " key={i}>
                   <span className="input-label">
-                    {cvg.CoverageCode} Coverage Premium: {cvg.Amount}
+                    Vehicle-{i + 1} Premium: {veh.Amount}
                   </span>
+                  <ul className="list-group">
+                    {Object.entries(veh.CvgDetails).map(([key, cvg], i) => (
+                      <li className="list-group-item " key={i}>
+                        <span className="input-label">
+                          {cvg.CoverageCode} Coverage Premium: {cvg.Amount}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
-      <button
-        onClick={() => {
-          window.open("http://localhost:8000/download/output.csv");
-          // this.handleDownload(
-          //   "http://localhost:8000/download/output.csv",
-          //   "output.csv"
-          // );
-        }}
-      >
-        Download Worksheet
-      </button>
+              )
+            )}
+          </ul>
+        </div>
+        <button
+          className="btn btn-outline-dark my-2 my-sm-0"
+          onClick={() => {
+            window.open("http://localhost:8000/download/output.csv");
+            // this.handleDownload(
+            //   "http://localhost:8000/download/output.csv",
+            //   "output.csv"
+            // );
+          }}
+        >
+          Download Worksheet
+        </button>
+      </div>
     </>
   );
 }

@@ -54,29 +54,31 @@ function CreateQuote() {
   };
 
   return (
-    <div className="container-fluid">
-      {showQuoteButton && (
-        <div className="form-group col-md-6">
-          <input type="text" name="Zipcode" placeholder="Zipcode" />
-          <button
-            className=" btn btn-outline-success my-2 my-sm-0"
-            onClick={() => {
-              setshowQuote(true);
-              setshowQuoteButton(false);
-              setshowDriverButton(true);
-            }}
-          >
-            Create Quote
-          </button>
-        </div>
-      )}
-      <div className="form-group col-md-6">
+    <div className="container">
+      <div className="form-group col-md-45">
+        {showQuoteButton && (
+          <div className="form-group col-md-45">
+            <input type="text" name="Zipcode" placeholder="Zipcode" />
+            <button
+              className=" btn btn-outline-dark my-2 my-sm-0"
+              onClick={() => {
+                setshowQuote(true);
+                setshowQuoteButton(false);
+                setshowDriverButton(true);
+              }}
+            >
+              Create Quote
+            </button>
+          </div>
+        )}
+      </div>
+      <div className="form-group col-md-45">
         {showQuote && <Quoteform getquoteData={getquoteData}></Quoteform>}
       </div>
 
       {showDriverButton && (
         <button
-          className="btn btn-outline-success my-2 my-sm-0"
+          className="btn btn-outline-dark my-2 my-sm-0"
           onClick={() => {
             setshowDriver(true);
             setshowDriverButton(false);
@@ -87,12 +89,12 @@ function CreateQuote() {
         </button>
       )}
 
-      <div className="form-group col-md-6">
+      <div className="form-group col-md-45">
         {showDriver && <Driverform getdriverData={getdriverData}></Driverform>}
       </div>
       {showVehicleButton && (
         <button
-          className="btn btn-outline-success my-2 my-sm-0"
+          className="btn btn-outline-dark my-2 my-sm-0"
           onClick={() => {
             setshowVehicle(true);
             setshowVehicleButton(false);
@@ -101,7 +103,7 @@ function CreateQuote() {
           Add Vehicle Details
         </button>
       )}
-      <div className="form-group col-md-6">
+      <div className="form-group col-md-45">
         {showVehicle && (
           <Vehicleform getvehicleData={getvehicleData}></Vehicleform>
         )}
@@ -109,7 +111,7 @@ function CreateQuote() {
       <div className="form-group col-md-6">
         {showQuote && showDriver && showVehicle && (
           <button
-            className="btn btn-outline-success my-2 my-sm-0"
+            className="btn btn-outline-dark my-2 my-sm-0"
             onClick={handleSubmit}
           >
             Submit

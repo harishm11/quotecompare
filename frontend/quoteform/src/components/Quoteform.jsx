@@ -4,7 +4,7 @@ export default function Quoteform(props) {
   var [quoteformFields, setquoteformFields] = useState({
     quotenumber: Math.floor(Math.random() * 999999999),
     effDate: new Date(),
-    policyterm: 12,
+    policyterm: "6",
     AutoUmbrellaInd: "",
     AutoHomeInd: "",
     AutoHomeLifeInd: "",
@@ -23,25 +23,25 @@ export default function Quoteform(props) {
   return (
     <>
       <div className="card">
-        <div className="card-body">
+        <div className="card-body ">
           <form>
             <label>Quote Number</label>
             <input
-              className="form-control"
+              className="form-control form-control-sm"
               name="quotenumber"
               onChange={(event) => handleQuoteFormChange(event)}
               value={quoteformFields.quotenumber}
             />
             <label>Effective Date</label>
             <input
-              className="form-control"
+              className="form-control form-control-sm"
               name="effDate"
               onChange={(event) => handleQuoteFormChange(event)}
               value={quoteformFields.effDate}
             />
             <label>Policy term</label>
             <input
-              className="form-control"
+              className="form-control form-control-sm"
               type="number"
               min="6"
               name="policyterm"
