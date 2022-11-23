@@ -1,6 +1,7 @@
 package quote
 
 import (
+	"log"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
@@ -13,6 +14,7 @@ func GetQuotes(c *fiber.Ctx) error {
 	var quotes []models.Quote
 	result := db.Find(&quotes)
 	if result.Error != nil {
+		log.Println(result.Error)
 		panic(result.Error)
 	}
 	return c.JSON(quotes)
@@ -24,6 +26,7 @@ func GetQuote(c *fiber.Ctx) error {
 	var quote models.Quote
 	result := db.Find(&quote, id)
 	if result.Error != nil {
+		log.Println(result.Error)
 		panic(result.Error)
 	}
 	return c.JSON(quote)
@@ -36,9 +39,12 @@ func NewQuote(c *fiber.Ctx) error {
 
 	//parse the input json quote request
 	if err := c.BodyParser(quote); err != nil {
+		log.Println(err)
 		panic(err)
 	}
-	quote.RateTermStartDate = quote.QuoteEffDate
+
+	
+	quote.RateTermStartDate = quote.Quotes.QuoteEffDate
 	quote.RateAppliedDate = time.Now()
 	quote.QuoteStartDate = time.Now()
 
@@ -53,11 +59,13 @@ func DeleteQuote(c *fiber.Ctx) error {
 	var quote models.Quote
 	result := db.First(&quote, id)
 	if result.Error != nil {
+		log.Println(result.Error)
 		panic(result.Error)
 	}
 
 	result1 := db.Delete(&quote)
 	if result1.Error != nil {
+		log.Println(result.Error)
 		panic(result1.Error)
 	}
 	return c.SendString("Deleted")

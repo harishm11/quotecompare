@@ -2,6 +2,7 @@ package discount
 
 import (
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
@@ -18,7 +19,8 @@ func Discount(c *fiber.Ctx) error {
 	if err := c.BodyParser(quote); err != nil {
 		panic(err)
 	}
-	quote.RateTermStartDate = quote.QuoteEffDate
+
+	quote.RateTermStartDate = quote.Quotes.QuoteEffDate
 	quote.RateAppliedDate = time.Now()
 	quote.QuoteStartDate = time.Now()
 	//Populate Good Coverages
@@ -29,5 +31,6 @@ func Discount(c *fiber.Ctx) error {
 }
 
 func InvokeDiscRules(quote *models.Quote) string {
+	log.Println("unimplemented")
 	panic("unimplemented")
 }

@@ -31,8 +31,8 @@
   "RoundorTruncDigits": 2,
   "RateFactor": 211.02,
   "StepResult": 211.02,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -47,7 +47,7 @@
   "StepSplMethod": "DirectFactorLookup",
   "CvgCodetoGetFctr": "BodilyInjury",
   "RateVar1Code": "TermLength",
-  "RateVar1Value": "6",
+  "RateVar1Value": "12",
   "RateVar2Code": "",
   "RateVar2Value": "",
   "RateVar3Code": "",
@@ -65,10 +65,10 @@
   "DefaultValue": 0,
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
-  "RateFactor": 1,
-  "StepResult": 211.02,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateFactor": 2,
+  "StepResult": 422.04,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -102,9 +102,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.46,
-  "StepResult": 308.0892,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 616.1784,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -138,9 +138,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 308.0892,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 616.1784,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -174,9 +174,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.91,
-  "StepResult": 280.36118,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 560.72235,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -210,9 +210,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.86,
-  "StepResult": 241.11061,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 482.22122,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -246,9 +246,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.598,
-  "StepResult": 144.18414,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 288.3683,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -263,7 +263,7 @@
   "StepSplMethod": "DirectFactorLookup",
   "CvgCodetoGetFctr": "BodilyInjury",
   "RateVar1Code": "ModelYear",
-  "RateVar1Value": "2001",
+  "RateVar1Value": "2000",
   "RateVar2Code": "",
   "RateVar2Value": "",
   "RateVar3Code": "",
@@ -281,10 +281,10 @@
   "DefaultValue": 0,
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
-  "RateFactor": 0.9333,
-  "StepResult": 134.56706,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateFactor": 0.9048,
+  "StepResult": 260.91562,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -318,9 +318,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 134.56706,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 260.91562,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -354,9 +354,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 134.56706,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 260.91562,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -390,9 +390,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 134.56706,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 260.91562,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -426,9 +426,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 134.56706,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 260.91562,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -462,9 +462,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 134.56706,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 260.91562,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -498,9 +498,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.6924,
-  "StepResult": 227.74129,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 441.57358,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -534,9 +534,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 227.74129,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 441.57358,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -570,9 +570,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 227.74129,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 441.57358,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -606,9 +606,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.12,
-  "StepResult": 255.07024,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 494.5624,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -642,9 +642,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.1,
-  "StepResult": 280.57727,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 544.0187,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -678,9 +678,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.8129,
-  "StepResult": 228.08127,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 442.2328,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -714,9 +714,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.7353,
-  "StepResult": 167.70816,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 325.17377,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -750,9 +750,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.97,
-  "StepResult": 162.67693,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 315.41855,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -786,9 +786,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 162.67693,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 315.41855,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -822,9 +822,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 162.67693,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 315.41855,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "0001-01-01T00:00:00Z"
  },
  {
@@ -859,8 +859,8 @@
   "RoundorTruncDigits": 2,
   "RateFactor": 200.31,
   "StepResult": 200.31,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -875,7 +875,7 @@
   "StepSplMethod": "DirectFactorLookup",
   "CvgCodetoGetFctr": "Collission",
   "RateVar1Code": "TermLength",
-  "RateVar1Value": "6",
+  "RateVar1Value": "12",
   "RateVar2Code": "",
   "RateVar2Value": "",
   "RateVar3Code": "",
@@ -893,10 +893,10 @@
   "DefaultValue": 0,
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
-  "RateFactor": 1,
-  "StepResult": 200.31,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateFactor": 2,
+  "StepResult": 400.62,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -930,9 +930,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.2246,
-  "StepResult": 245.29962,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 490.59924,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -966,9 +966,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 245.29962,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 490.59924,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1002,9 +1002,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.91,
-  "StepResult": 223.22266,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 446.4453,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1038,9 +1038,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.86,
-  "StepResult": 191.97148,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 383.94296,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1074,9 +1074,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.5446,
-  "StepResult": 104.54767,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 209.09534,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1091,7 +1091,7 @@
   "StepSplMethod": "DirectFactorLookup",
   "CvgCodetoGetFctr": "Collission",
   "RateVar1Code": "ModelYear",
-  "RateVar1Value": "2001",
+  "RateVar1Value": "2000",
   "RateVar2Code": "",
   "RateVar2Value": "",
   "RateVar3Code": "",
@@ -1109,10 +1109,10 @@
   "DefaultValue": 0,
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
-  "RateFactor": 1.5671,
-  "StepResult": 163.83665,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateFactor": 1.5431,
+  "StepResult": 322.65503,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1146,9 +1146,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 163.83665,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 322.65503,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1182,9 +1182,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 163.83665,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 322.65503,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1218,9 +1218,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 163.83665,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 322.65503,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1254,9 +1254,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 163.83665,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 322.65503,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1290,9 +1290,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 163.83665,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 322.65503,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1326,9 +1326,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.7429,
-  "StepResult": 285.5509,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 562.35547,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1362,9 +1362,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 285.5509,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 562.35547,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1398,9 +1398,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 285.5509,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 562.35547,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1434,9 +1434,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.12,
-  "StepResult": 319.81702,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 629.83813,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1470,9 +1470,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.1277,
-  "StepResult": 360.65765,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 710.26843,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1506,9 +1506,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.8277,
-  "StepResult": 298.51636,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 587.8892,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1542,9 +1542,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.7929,
-  "StepResult": 236.69363,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 466.1374,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1578,9 +1578,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.97,
-  "StepResult": 229.59283,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 452.1533,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1614,9 +1614,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 229.59283,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 452.1533,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1650,9 +1650,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 229.59283,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 452.1533,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "0001-01-01T00:00:00Z"
  },
  {
@@ -1687,8 +1687,8 @@
   "RoundorTruncDigits": 2,
   "RateFactor": 60.08,
   "StepResult": 60.08,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1703,7 +1703,7 @@
   "StepSplMethod": "DirectFactorLookup",
   "CvgCodetoGetFctr": "Comprehensive",
   "RateVar1Code": "TermLength",
-  "RateVar1Value": "6",
+  "RateVar1Value": "12",
   "RateVar2Code": "",
   "RateVar2Value": "",
   "RateVar3Code": "",
@@ -1721,10 +1721,10 @@
   "DefaultValue": 0,
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
-  "RateFactor": 1,
-  "StepResult": 60.08,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateFactor": 2,
+  "StepResult": 120.16,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1758,9 +1758,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.0009,
-  "StepResult": 60.134075,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 120.26815,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1794,9 +1794,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 60.134075,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 120.26815,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1830,9 +1830,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.99,
-  "StepResult": 59.532734,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 119.06547,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1866,9 +1866,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.86,
-  "StepResult": 51.19815,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 102.3963,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1902,9 +1902,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.4427,
-  "StepResult": 22.66542,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 45.33084,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1919,7 +1919,7 @@
   "StepSplMethod": "DirectFactorLookup",
   "CvgCodetoGetFctr": "Comprehensive",
   "RateVar1Code": "ModelYear",
-  "RateVar1Value": "2001",
+  "RateVar1Value": "2000",
   "RateVar2Code": "",
   "RateVar2Value": "",
   "RateVar3Code": "",
@@ -1937,10 +1937,10 @@
   "DefaultValue": 0,
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
-  "RateFactor": 0.8392,
-  "StepResult": 19.02082,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateFactor": 0.8226,
+  "StepResult": 37.28915,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -1974,9 +1974,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 19.02082,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 37.28915,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2010,9 +2010,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 19.02082,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 37.28915,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2046,9 +2046,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 19.02082,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 37.28915,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2082,9 +2082,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 19.02082,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 37.28915,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2118,9 +2118,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 19.02082,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 37.28915,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2154,9 +2154,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 19.02082,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 37.28915,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2190,9 +2190,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.3791,
-  "StepResult": 26.231613,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 51.425465,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2226,9 +2226,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 26.231613,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 51.425465,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2262,9 +2262,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 26.231613,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 51.425465,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2298,9 +2298,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.12,
-  "StepResult": 29.379406,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 57.59652,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2334,9 +2334,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 29.379406,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 57.59652,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2370,9 +2370,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.939,
-  "StepResult": 27.587263,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 54.083134,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2406,9 +2406,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.644,
-  "StepResult": 17.766197,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 34.829536,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2442,9 +2442,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.97,
-  "StepResult": 17.233212,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 33.784653,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2478,9 +2478,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 17.233212,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 33.784653,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2514,9 +2514,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 17.233212,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 33.784653,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "0001-01-01T00:00:00Z"
  },
  {
@@ -2551,8 +2551,8 @@
   "RoundorTruncDigits": 2,
   "RateFactor": 44.48,
   "StepResult": 44.48,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2567,7 +2567,7 @@
   "StepSplMethod": "DirectFactorLookup",
   "CvgCodetoGetFctr": "Medical",
   "RateVar1Code": "TermLength",
-  "RateVar1Value": "6",
+  "RateVar1Value": "12",
   "RateVar2Code": "",
   "RateVar2Value": "",
   "RateVar3Code": "",
@@ -2585,10 +2585,10 @@
   "DefaultValue": 0,
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
-  "RateFactor": 1,
-  "StepResult": 44.48,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateFactor": 2,
+  "StepResult": 88.96,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2622,9 +2622,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 44.48,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 88.96,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2658,9 +2658,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 44.48,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 88.96,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2694,9 +2694,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.95,
-  "StepResult": 42.256,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 84.512,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2730,9 +2730,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.87,
-  "StepResult": 36.762722,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 73.525444,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2766,9 +2766,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.6258,
-  "StepResult": 23.006111,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 46.012222,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2783,7 +2783,7 @@
   "StepSplMethod": "DirectFactorLookup",
   "CvgCodetoGetFctr": "Medical",
   "RateVar1Code": "ModelYear",
-  "RateVar1Value": "2001",
+  "RateVar1Value": "2000",
   "RateVar2Code": "",
   "RateVar2Value": "",
   "RateVar3Code": "",
@@ -2801,10 +2801,10 @@
   "DefaultValue": 0,
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
-  "RateFactor": 0.9391,
-  "StepResult": 21.60504,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateFactor": 0.9198,
+  "StepResult": 42.32204,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2838,9 +2838,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 21.60504,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 42.32204,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2874,9 +2874,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 21.60504,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 42.32204,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2910,9 +2910,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.98,
-  "StepResult": 21.17294,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 41.4756,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2946,9 +2946,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 21.17294,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 41.4756,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -2982,9 +2982,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 21.17294,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 41.4756,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3018,9 +3018,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 21.17294,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 41.4756,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3054,9 +3054,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.8352,
-  "StepResult": 38.85658,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 76.11602,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3090,9 +3090,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 38.85658,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 76.11602,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3126,9 +3126,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 38.85658,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 76.11602,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3162,9 +3162,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.01,
-  "StepResult": 39.245144,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 76.87718,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3198,9 +3198,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 39.245144,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 76.87718,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3234,9 +3234,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.8198,
-  "StepResult": 32.17317,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 63.023914,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3270,9 +3270,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.782,
-  "StepResult": 25.159418,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 49.284702,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3306,9 +3306,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.97,
-  "StepResult": 24.404636,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 47.806164,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3342,9 +3342,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 24.404636,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 47.806164,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3378,9 +3378,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 24.404636,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 47.806164,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "0001-01-01T00:00:00Z"
  },
  {
@@ -3415,8 +3415,8 @@
   "RoundorTruncDigits": 2,
   "RateFactor": 194.24,
   "StepResult": 194.24,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3431,7 +3431,7 @@
   "StepSplMethod": "DirectFactorLookup",
   "CvgCodetoGetFctr": "PropertyDamage",
   "RateVar1Code": "TermLength",
-  "RateVar1Value": "6",
+  "RateVar1Value": "12",
   "RateVar2Code": "",
   "RateVar2Value": "",
   "RateVar3Code": "",
@@ -3449,10 +3449,10 @@
   "DefaultValue": 0,
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
-  "RateFactor": 1,
-  "StepResult": 194.24,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateFactor": 2,
+  "StepResult": 388.48,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3486,9 +3486,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.2674,
-  "StepResult": 246.1798,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 492.3596,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3522,9 +3522,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 246.1798,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 492.3596,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3558,9 +3558,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.91,
-  "StepResult": 224.02362,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 448.04724,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3594,9 +3594,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.86,
-  "StepResult": 192.66032,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 385.32065,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3630,9 +3630,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.526,
-  "StepResult": 101.33933,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 202.67867,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3647,7 +3647,7 @@
   "StepSplMethod": "DirectFactorLookup",
   "CvgCodetoGetFctr": "PropertyDamage",
   "RateVar1Code": "ModelYear",
-  "RateVar1Value": "2001",
+  "RateVar1Value": "2000",
   "RateVar2Code": "",
   "RateVar2Value": "",
   "RateVar3Code": "",
@@ -3665,10 +3665,10 @@
   "DefaultValue": 0,
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
-  "RateFactor": 0.9732,
-  "StepResult": 98.62344,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateFactor": 0.943,
+  "StepResult": 191.12599,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3702,9 +3702,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 98.62344,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 191.12599,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3738,9 +3738,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 98.62344,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 191.12599,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3774,9 +3774,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 98.62344,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 191.12599,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3810,9 +3810,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 98.62344,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 191.12599,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3846,9 +3846,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 98.62344,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 191.12599,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3882,9 +3882,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.6148,
-  "StepResult": 159.25714,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 308.63025,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3918,9 +3918,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 159.25714,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 308.63025,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3954,9 +3954,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 159.25714,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 308.63025,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -3990,9 +3990,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.12,
-  "StepResult": 178.368,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 345.6659,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4026,9 +4026,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.12,
-  "StepResult": 199.77216,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 387.1458,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4062,9 +4062,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.8223,
-  "StepResult": 164.27264,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 318.35,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4098,9 +4098,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.8303,
-  "StepResult": 136.39557,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 264.326,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4134,9 +4134,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.97,
-  "StepResult": 132.30371,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 256.3962,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4170,9 +4170,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 132.30371,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 256.3962,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4206,9 +4206,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 132.30371,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 256.3962,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "0001-01-01T00:00:00Z"
  },
  {
@@ -4243,8 +4243,8 @@
   "RoundorTruncDigits": 2,
   "RateFactor": 31.73,
   "StepResult": 31.73,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4259,7 +4259,7 @@
   "StepSplMethod": "DirectFactorLookup",
   "CvgCodetoGetFctr": "UninsuredMotoristBI",
   "RateVar1Code": "TermLength",
-  "RateVar1Value": "6",
+  "RateVar1Value": "12",
   "RateVar2Code": "",
   "RateVar2Value": "",
   "RateVar3Code": "",
@@ -4277,10 +4277,10 @@
   "DefaultValue": 0,
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
-  "RateFactor": 1,
-  "StepResult": 31.73,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateFactor": 2,
+  "StepResult": 63.46,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4314,9 +4314,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 2.3292,
-  "StepResult": 73.90552,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 147.81104,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4350,9 +4350,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 73.90552,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 147.81104,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4386,9 +4386,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.97,
-  "StepResult": 71.688354,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 143.37671,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4422,9 +4422,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.86,
-  "StepResult": 61.651985,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 123.30397,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4458,9 +4458,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.6979,
-  "StepResult": 43.02692,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 86.05384,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4475,7 +4475,7 @@
   "StepSplMethod": "DirectFactorLookup",
   "CvgCodetoGetFctr": "UninsuredMotoristBI",
   "RateVar1Code": "ModelYear",
-  "RateVar1Value": "2001",
+  "RateVar1Value": "2000",
   "RateVar2Code": "",
   "RateVar2Value": "",
   "RateVar3Code": "",
@@ -4493,10 +4493,10 @@
   "DefaultValue": 0,
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
-  "RateFactor": 0.9252,
-  "StepResult": 39.808506,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateFactor": 0.911,
+  "StepResult": 78.39505,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4530,9 +4530,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 39.808506,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 78.39505,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4566,9 +4566,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 39.808506,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 78.39505,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4602,9 +4602,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 39.808506,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 78.39505,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4638,9 +4638,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.7239,
-  "StepResult": 68.625885,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 135.14522,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4674,9 +4674,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 68.625885,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 135.14522,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4710,9 +4710,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 68.625885,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 135.14522,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4746,9 +4746,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 68.625885,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 135.14522,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4782,9 +4782,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 68.625885,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 135.14522,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4818,9 +4818,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.8041,
-  "StepResult": 55.18207,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 108.670265,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4854,9 +4854,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.8088,
-  "StepResult": 44.63126,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 87.89251,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4890,9 +4890,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.97,
-  "StepResult": 43.292324,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 85.25574,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4926,9 +4926,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 43.292324,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 85.25574,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -4962,9 +4962,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 43.292324,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 85.25574,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "0001-01-01T00:00:00Z"
  },
  {
@@ -4999,8 +4999,8 @@
   "RoundorTruncDigits": 2,
   "RateFactor": 6.24,
   "StepResult": 6.24,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5015,7 +5015,7 @@
   "StepSplMethod": "DirectFactorLookup",
   "CvgCodetoGetFctr": "UninsuredMotoristPD",
   "RateVar1Code": "TermLength",
-  "RateVar1Value": "6",
+  "RateVar1Value": "12",
   "RateVar2Code": "",
   "RateVar2Value": "",
   "RateVar3Code": "",
@@ -5033,10 +5033,10 @@
   "DefaultValue": 0,
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
-  "RateFactor": 1,
-  "StepResult": 6.24,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateFactor": 2,
+  "StepResult": 12.48,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5070,9 +5070,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 2.3292,
-  "StepResult": 14.534207,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 29.068415,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5106,9 +5106,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 14.534207,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 29.068415,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5142,9 +5142,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.97,
-  "StepResult": 14.098182,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 28.196363,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5178,9 +5178,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.86,
-  "StepResult": 12.124436,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 24.248873,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5214,9 +5214,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.6979,
-  "StepResult": 8.461644,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 16.923288,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5231,7 +5231,7 @@
   "StepSplMethod": "DirectFactorLookup",
   "CvgCodetoGetFctr": "UninsuredMotoristPD",
   "RateVar1Code": "ModelYear",
-  "RateVar1Value": "2001",
+  "RateVar1Value": "2000",
   "RateVar2Code": "",
   "RateVar2Value": "",
   "RateVar3Code": "",
@@ -5249,10 +5249,10 @@
   "DefaultValue": 0,
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
-  "RateFactor": 0.9252,
-  "StepResult": 7.828713,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "RateFactor": 0.911,
+  "StepResult": 15.417116,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5286,9 +5286,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 7.828713,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 15.417116,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5322,9 +5322,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 7.828713,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 15.417116,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5358,9 +5358,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 7.828713,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 15.417116,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5394,9 +5394,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1.7239,
-  "StepResult": 13.495918,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 26.577566,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5430,9 +5430,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 13.495918,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 26.577566,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5466,9 +5466,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 13.495918,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 26.577566,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5502,9 +5502,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 13.495918,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 26.577566,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5538,9 +5538,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 13.495918,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 26.577566,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5574,9 +5574,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.8041,
-  "StepResult": 10.852068,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 21.371021,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5610,9 +5610,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.8088,
-  "StepResult": 8.777152,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 17.284882,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5646,9 +5646,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 0.97,
-  "StepResult": 8.513838,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 16.766336,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5682,9 +5682,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 8.513838,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 16.766336,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "2022-09-13T00:00:00-07:00"
  },
  {
@@ -5718,9 +5718,9 @@
   "RoundorTrunc": "R",
   "RoundorTruncDigits": 2,
   "RateFactor": 1,
-  "StepResult": 8.513838,
-  "RateEffDate": "2022-10-15T07:00:00Z",
-  "RatebookActivationDate": "2022-09-13T00:00:00-07:00",
+  "StepResult": 16.766336,
+  "RateEffDate": "2022-11-23T02:53:57.529Z",
+  "RatebookActivationDate": "2022-10-13T00:00:00-07:00",
   "RateActivationDate": "0001-01-01T00:00:00Z"
  }
 ]
