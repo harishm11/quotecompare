@@ -22,7 +22,7 @@ export default function App() {
             <Route path="/" element={App} />
             <Route path="/Quote" element={<CreateQuote/>} />
             <Route path="/Results" element={<ShowResults/>} /> 
-            <Route path="/new" element={<CreateQuote/>} /> 
+            {/* <Route path="/new"  element={   <Signup/>} />  */}
         </Routes>
           
       </div>
